@@ -1,0 +1,26 @@
+.contenedor_cabezera {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-inline: 8vw;
+  .contenedor_botonHome {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    svg {
+      width: 10vw;
+    }
+    p {
+      font-family: "OakesGroteskLight";
+      color: $azul;
+      font-size: 3vw;
+    }
+  }
+  .contenedor_logos {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+  }
+}
