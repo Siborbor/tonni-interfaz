@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import BotonAtras from "../components/BotonAtrasComponent";
 import NumeroDos from "../svg components/Numerodos";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
+import dataproductos from "./../data/productos"
 
 const EscojeTuSabor = () => {
   const location = useLocation();
@@ -11,6 +12,9 @@ const EscojeTuSabor = () => {
 
   const [tipo, setTipo] = useState("");
   const [producto, setProducto] = useState("");
+
+  const [griego, lecheBlanca, bebidaAlmendras] = dataproductos;
+  console.log(griego.Griego.sabor)
 
   const selectColor = (producto) => {
     let color;
@@ -21,7 +25,7 @@ const EscojeTuSabor = () => {
       color = "#001D85";
     }
     if (producto == "Griego") {
-      color = "#80B7FF";
+      color = "#80B7FF";s
     }
 
     return color;
@@ -48,9 +52,28 @@ const EscojeTuSabor = () => {
               Escoge tu sabor preferido
             </p>
           </motion.div>
-          <div className="numero_subtitulo">
-            <p>Escoge solo 1</p>
-          </div>
+          <motion.div
+            div
+            className="numero_subtitulo"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.4 }}
+          >
+            <p>(Elige solo 1)</p>
+          </motion.div>
+        </div>
+        <div className="contenedor_productos">
+            
+            {/* {console.log(LecheBlanca)} */}
+            {/* {dataproductos.map(() =>{
+              
+              <h1>
+                {}
+              </h1>
+                
+            })
+
+            }; */}
         </div>
         <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
       </div>
