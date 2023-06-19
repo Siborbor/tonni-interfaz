@@ -2,7 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  padding-inline: 8vw;
+  position: absolute;
+  top: 0px;
+  width: 83vw;
   .contenedor_botonHome {
     display: flex;
     align-items: center;
