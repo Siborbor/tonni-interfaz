@@ -6,5 +6,7 @@ React
 Laravel
 html
 Scss
+Vite
+Mysql
 
 ![interfaz tonni](https://github.com/Siborbor/tonni-interfaz/assets/89548886/67e3f462-6507-4378-84ab-f484f13302a2)
