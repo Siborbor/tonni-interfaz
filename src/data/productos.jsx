@@ -1,56 +1,63 @@
- const productos = [
-  {Griego: {
+const productos = {
+  Griego: {
     imagen: "/bebidaGriego.png",
-    sabor: {
-      mango: {
-        nombre:"mango",
+    sabor: [
+      {
+        title: "mango",
         imagen: "",
       },
-      frutilla: {
+      {
+        title: "frutilla",
         imagen: "",
       },
-      "limón Coco": {
+      {
+        title: "limón Coco",
         imagen: "",
       },
-      maracuyá: {
+      {
+        title: "maracuyá",
         imagen: "",
       },
-      natural: {
+      {
+        title: "natural",
         imagen: "",
       },
-    },
+    ],
   },
-  "LecheBlanca": {
+  LecheBlanca: {
     imagen: "/lecheBlanca.png",
-    sabor: {
-      semidescremada: {
+    sabor: [
+      {
+        title: "semidescremada",
         imagen: "",
       },
-      descremada: {
+      {
+        title: "descremada",
         imagen: "",
       },
-      deslactosada: {
+      {
+        title: "deslactosada",
         imagen: "",
       },
-    },
+    ],
   },
-  "BebidadeAlmendras": {
+  BebidadeAlmendras: {
     imagen: "/bebidaalmendra.png",
-    sabor: {
-      banana: {
-        title:"banana",
+    sabor: [
+      {
+        title: "banana",
         imagen: "/src/assets/banana.png",
       },
-      frutilla: {
-        title:"futrilla",
+      {
+        title: "frutilla",
         imagen: "/src/assets/frutilla.png",
       },
-      chocolate: {
-        nombre:"chocolate",
+      {
+        title: "chocolate",
         imagen: "/src/assets/chocolate.png",
       },
-    },
+    ],
   },
-}];
+};
 
 export default productos;

@@ -4,17 +4,18 @@ import { motion } from "framer-motion";
 import BotonAtras from "../components/BotonAtrasComponent";
 import NumeroDos from "../svg components/Numerodos";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
-import dataproductos from "./../data/productos"
+import dataproductos from "./../data/productos";
 
 const EscojeTuSabor = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const array =["1","2","3","4"]
+
   const [tipo, setTipo] = useState("");
   const [producto, setProducto] = useState("");
-
-  const [griego, lecheBlanca, bebidaAlmendras] = dataproductos;
-  console.log(griego.Griego.sabor)
+  const [sabores, setSabores] = useState([]);
+  const [comboProductos, setComboProductos] = useState(null);
 
   const selectColor = (producto) => {
     let color;
@@ -25,7 +26,7 @@ const EscojeTuSabor = () => {
       color = "#001D85";
     }
     if (producto == "Griego") {
-      color = "#80B7FF";s
+      color = "#80B7FF";
     }
 
     return color;
@@ -34,7 +35,24 @@ const EscojeTuSabor = () => {
   useEffect(() => {
     setTipo(location.state.tipo);
     setProducto(location.state.producto);
+    setComboProductos(dataproductos);
   }, []);
+
+  useEffect(() => {
+    const getSaborbyProduct = (dataproductos, producto) => {
+      if (producto == "Griego") {
+        setSabores(dataproductos.Griego.sabor);
+      }
+      if (producto == "LecheBlanca") {
+        setSabores(dataproductos.LecheBlanca.sabor);
+      }
+      if (producto == "BebidadeAlmendras") {
+        setSabores(dataproductos.BebidadeAlmendras.sabor);
+      }
+    };
+
+    getSaborbyProduct(comboProductos, producto);
+  }, [comboProductos]);
 
   return (
     <div>
@@ -63,17 +81,12 @@ const EscojeTuSabor = () => {
           </motion.div>
         </div>
         <div className="contenedor_productos">
-            
-            {/* {console.log(LecheBlanca)} */}
-            {/* {dataproductos.map(() =>{
-              
-              <h1>
-                {}
-              </h1>
-                
-            })
-
-            }; */}
+          {sabores.map((el) => (
+            <div className="producto">
+            <img src={el.imagen}/>
+            <p>{el.title}</p>
+            </div>
+            ))}
         </div>
         <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
       </div>

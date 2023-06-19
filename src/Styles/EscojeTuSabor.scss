@@ -17,11 +17,13 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  flex-direction: column;
   .contenedor_texto {
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
     .numero_titulo {
       display: flex;
       align-items: center;
@@ -37,9 +39,30 @@
       }
     }
     .numero_subtitulo {
-      p{
+      p {
         font-family: $heavy;
         margin: 0px;
+      }
+    }
+  }
+  .contenedor_productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    .producto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 25vw;
+      }
+      p {
+        margin: 0px;
+        font-family: $heavy;
+        font-size: 3.5vw;
       }
     }
   }
