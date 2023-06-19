@@ -10,8 +10,6 @@ const EscojeTuSabor = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const array =["1","2","3","4"]
-
   const [tipo, setTipo] = useState("");
   const [producto, setProducto] = useState("");
   const [sabores, setSabores] = useState([]);
@@ -80,14 +78,19 @@ const EscojeTuSabor = () => {
             <p>(Elige solo 1)</p>
           </motion.div>
         </div>
-        <div className="contenedor_productos">
+        <motion.div
+          className="contenedor_productos"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: -10, opacity: 1 }}
+          transition={{ back: "backIn", duration: 0.5, delay: 0.6 }}
+        >
           {sabores.map((el) => (
             <div className="producto">
-            <img src={el.imagen}/>
-            <p>{el.title}</p>
+              <img src={el.imagen} />
+              <p>{el.title}</p>
             </div>
-            ))}
-        </div>
+          ))}
+        </motion.div>
         <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
       </div>
     </div>
