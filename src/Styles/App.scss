@@ -1,0 +1,16 @@
+@import "./home.scss";
+@import "./EscojeTuProducto.scss";
+@import "./EscojeTuSabor.scss";
+@import "./BotonAtras.scss";
+
+@font-face {
+    font-family: "OakesGroteskBold";   /*Can be any text*/
+    src: local("OakesGroteskBold"),
+      url("../fonts/OakesGroteskBold/OakesGroteskBold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "OakesGroteskLight";   /*Can be any text*/
+    src: local("OakesGroteskLight"),
+      url("../fonts/OakesGroteskLight/OakesGroteskLight.ttf") format("truetype");
+  }

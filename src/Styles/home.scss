@@ -1,0 +1,49 @@
+@import "./vars.scss";
+
+body {
+  margin: 0px;
+}
+
+.contenedor_home {
+  height: 100vh;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .contenedor_imgTop_home {
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+  }
+
+  .contenedor_TextoBotones_home{
+    z-index: 999;
+    h5{
+        text-align: center;
+        color: $azul;
+        font-family: "OakesGroteskBold";
+        font-size: 6.5vw;
+        margin: 4vw 12vw;
+    }
+      .contenedor_tarjeta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        .tarjeta{
+            width: 30vw;
+            height: auto;
+        }
+      }
+  }
+
+  .contenedor_imgbotton_home {
+    position: absolute;
+    bottom: -15px;
+    width: 100vw;
+    right: -55px;
+  }
+}
