@@ -56,6 +56,9 @@ const EscojeTuSabor = () => {
     if(producto == "LecheBlanca"){
       navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep", {state:{tipo:tipo, producto:producto, sabor: sabor}});
     }
+    if(producto == "BebidadeAlmendras"){
+      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante", {state:{tipo:tipo, producto:producto, sabor: sabor}});
+    }
   }
 
   return (

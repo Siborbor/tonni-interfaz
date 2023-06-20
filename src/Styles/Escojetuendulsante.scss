@@ -14,7 +14,8 @@
     gap: 30px;
     display: flex;
     flex-direction: column;
-    .select {
+    .select_LecheBlanca,
+    .select_BebidadeAlmendras {
       gap: 20px;
       display: flex;
       align-items: center;
@@ -24,10 +25,8 @@
         background-color: #ffffff00;
         margin: 0;
         font: inherit;
-        color: $azul;
         width: 8vw;
         height: 8vw;
-        border: 5px solid $azul;
         border-radius: 50%;
         transform: translateY(-0.075em);
         display: grid;
@@ -38,8 +37,6 @@
         width: 8vw;
         height: 8vw;
         border-radius: 50%;
-        background-color: $azul;
-        color: $azul;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
       }
@@ -49,6 +46,29 @@
       label {
         font-family: $heavy;
         font-size: 6vw;
+        color: #7b6953;
+      }
+    }
+
+    .select_LecheBlanca {
+      input[type="radio"] {
+        color: $azul;
+        border: 5px solid $azul;
+      }
+      input[type="radio"]::before {
+        background-color: $azul;
+        color: $azul;
+      }
+    }
+
+    .select_BebidadeAlmendras{
+      input[type="radio"] {
+        color: $verde;
+        border: 5px solid $verde;
+      }
+      input[type="radio"]::before {
+        background-color: $verde;
+        color: $verde;
       }
     }
   }
