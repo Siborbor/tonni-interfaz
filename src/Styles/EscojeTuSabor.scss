@@ -50,7 +50,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
     .producto {
       display: flex;
       flex-direction: column;
@@ -62,7 +62,7 @@
       p {
         margin: 0px;
         font-family: $heavy;
-        font-size: 3.5vw;
+        font-size: 3vw;
       }
     }
   }

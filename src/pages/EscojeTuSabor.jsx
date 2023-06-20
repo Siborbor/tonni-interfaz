@@ -52,6 +52,12 @@ const EscojeTuSabor = () => {
     getSaborbyProduct(comboProductos, producto);
   }, [comboProductos]);
 
+  const handleClick = (tipo,producto,sabor) =>{
+    if(producto == "LecheBlanca"){
+      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep", {state:{tipo:tipo, producto:producto, sabor: sabor}});
+    }
+  }
+
   return (
     <div>
       <div className={`contenedor_Escojetusabor ${producto}`}>
@@ -61,7 +67,7 @@ const EscojeTuSabor = () => {
             className="numero_titulo"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ back: "backIn", duration: 0.5, delay: 0.2 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.5 }}
           >
             <NumeroDos color={selectColor(producto)} />
             <p style={{ color: selectColor(producto) }}>
@@ -73,7 +79,7 @@ const EscojeTuSabor = () => {
             className="numero_subtitulo"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ back: "backIn", duration: 0.5, delay: 0.4 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
             <p>(Elige solo 1)</p>
           </motion.div>
@@ -81,11 +87,11 @@ const EscojeTuSabor = () => {
         <motion.div
           className="contenedor_productos"
           initial={{ y: -50, opacity: 0 }}
-          animate={{ y: -10, opacity: 1 }}
-          transition={{ back: "backIn", duration: 0.5, delay: 0.6 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ back: "backIn", duration: 0.5, delay: 0.9}}
         >
-          {sabores.map((el) => (
-            <div className="producto">
+          {sabores.map((el, index) => (
+            <div key={index} className="producto" onClick={()=>handleClick(tipo,producto,el.title)}>
               <img src={el.imagen} />
               <p>{el.title}</p>
             </div>

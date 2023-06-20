@@ -4,23 +4,23 @@ const productos = {
     sabor: [
       {
         title: "mango",
-        imagen: "",
+        imagen: "/src/assets/mango.png",
       },
       {
         title: "frutilla",
-        imagen: "",
+        imagen: "/src/assets/natural.png",
       },
       {
         title: "limón Coco",
-        imagen: "",
+        imagen: "/src/assets/limoncoco.png",
       },
       {
         title: "maracuyá",
-        imagen: "",
+        imagen: "/src/assets/maracuya.png",
       },
       {
         title: "natural",
-        imagen: "",
+        imagen: "/src/assets/natural.png",
       },
     ],
   },
@@ -29,17 +29,31 @@ const productos = {
     sabor: [
       {
         title: "semidescremada",
-        imagen: "",
+        imagen: "/src/assets/semidescremada.png",
       },
       {
         title: "descremada",
-        imagen: "",
+        imagen: "/src/assets/descremada.png",
       },
       {
         title: "deslactosada",
-        imagen: "",
+        imagen: "/src/assets/deslactosada.png",
       },
     ],
+    tipoSabor:[
+        {
+          title: "banana",
+          imagen: "/src/assets/banana.png",
+        },
+        {
+          title: "frutilla",
+          imagen: "/src/assets/frutilla.png",
+        },
+        {
+          title: "chocolate",
+          imagen: "/src/assets/chocolate.png",
+        },
+    ]
   },
   BebidadeAlmendras: {
     imagen: "/bebidaalmendra.png",
