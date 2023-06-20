@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import BotonAtras from "../components/BotonAtrasComponent";
 import Botonsiguiente from "../svg components/BotonSiguiente";
-import { motion } from "framer-motion";
+import {motion } from "framer-motion";
 
 const EscojeTuEndulsante = () => {
   const location = useLocation();
@@ -17,12 +17,11 @@ const EscojeTuEndulsante = () => {
   const [endulsante, setEndulsante] = useState("");
   const [rigth, setRigth] = useState("50%");
 
-
   useEffect(() => {
     setTipo(location.state.tipo);
     setProducto(location.state.producto);
     setSabor(location.state.sabor);
-    producto == "LecheBlanca" && setTiposabor(location.state.tipoSabor);
+    setTiposabor(location.state.tipoSabor);
   }, []);
 
   useEffect(() => {
@@ -31,8 +30,16 @@ const EscojeTuEndulsante = () => {
     }
   }, [endulsante]);
 
-  const selectEndulsante = (e) => {
-    setEndulsante(e.target.value);
+  const handleClick = (tipo, producto, sabor, endulsante, tipoSabor) => {
+    navigate("/tonni/confirmatupedido", {
+      state: {
+        tipo: tipo,
+        producto: producto,
+        sabor: sabor,
+        tipoSabor:tipoSabor,
+        endulsante: endulsante,
+      },
+    });
   };
 
   return (
@@ -40,7 +47,12 @@ const EscojeTuEndulsante = () => {
       <div className={`contenedor_escojeTuEndulsante ${producto}`}>
         <CabezeraInterfaz producto={producto} />
         <div className="contenedor-selects">
-          <div className={`select_${producto}`}>
+          <motion.div
+            className={`select_${producto}`}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: -10, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.4 }}
+          >
             <input
               type="radio"
               name="endulsante"
@@ -53,8 +65,13 @@ const EscojeTuEndulsante = () => {
               <br />
               artificial
             </label>
-          </div>
-          <div className={`select_${producto}`}>
+          </motion.div>
+          <motion.div
+            className={`select_${producto}`}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: -10, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.6 }}
+          >
             <input
               type="radio"
               name="endulsante"
@@ -67,8 +84,13 @@ const EscojeTuEndulsante = () => {
               <br />
               natural
             </label>
-          </div>
-          <div className={`select_${producto}`}>
+          </motion.div>
+          <motion.div
+            className={`select_${producto}`}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: -10, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
+          >
             <input
               type="radio"
               name="endulsante"
@@ -81,9 +103,9 @@ const EscojeTuEndulsante = () => {
               <br />
               endulzante
             </label>
-          </div>
+          </motion.div>
         </div>
-        <motion.div
+        <div
           style={{
             display: "flex",
             position: "absolute",
@@ -92,9 +114,10 @@ const EscojeTuEndulsante = () => {
           }}
         >
           <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
-        </motion.div>
+        </div>
         <div
           className="boton_siguiente"
+          onClick={() => handleClick(tipo, producto, sabor, endulsante,tipoSabor)}
           style={{
             display: "flex",
             position: "absolute",
@@ -102,7 +125,11 @@ const EscojeTuEndulsante = () => {
             right: "7%",
           }}
         >
-          {endulsante && <Botonsiguiente color={producto == "LecheBlanca" ? "white" : "#757677"}/>}
+          {endulsante && (
+            <Botonsiguiente
+              color={producto == "LecheBlanca" ? "white" : "#757677"}
+            />
+          )}
         </div>
       </div>
     </div>

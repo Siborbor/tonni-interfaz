@@ -22,16 +22,15 @@ const EscojeTuSaborTwoStep = () => {
     setTiposabor(dataproductos.LecheBlanca.tipoSabor);
   }, []);
 
-  const handleClick = (tipo, producto, sabor, tipoSabor,e) => {
+  const handleClick = (tipo, producto, sabor, tipoSaborElegido) => {
     navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante", {
       state: {
         tipo: tipo,
         producto: producto,
         sabor: sabor,
-        tipoSabor: tipoSabor,
+        tipoSabor: tipoSaborElegido,
       },
     });
-    e.preventDefault();
   };
 
   return (

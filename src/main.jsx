@@ -7,6 +7,7 @@ import EscojeTuProducto from "./pages/EscojeTuProducto.jsx";
 import EscojeTuSabor from "./pages/EscojeTuSabor.jsx";
 import EscojeTuSaborTwoStep from "./pages/EscojeTuSaborTwoStep.jsx";
 import EscojeTuEndulsante from "./pages/EscojeTuEndulsante.jsx";
+import ConfirmaTuPedido from "./pages/ConfirmaTuPedido.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante",
     element: <EscojeTuEndulsante />,
+  },
+  {
+    path: "tonni/confirmatuPedido",
+    element: <ConfirmaTuPedido/>,
   },
 ]);
 
