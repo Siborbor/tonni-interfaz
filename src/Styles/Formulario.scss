@@ -37,26 +37,43 @@
   }
   .contenido_formulario {
     text-align: center;
-    h5{
-        font-family: $bold;
-        color:$azul;
-        font-size: 6vw;
-        margin: 0px;
+    h5 {
+      font-family: $bold;
+      color: $azul;
+      font-size: 6vw;
+      margin: 0px;
     }
-    h6{
+    h6 {
+      font-family: $heavy;
+      color: $azul;
+      font-size: 2.5vw;
+      margin: 0px;
+      margin-bottom: 40px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      label {
         font-family: $heavy;
         color: $azul;
-        font-size: 2.5vw;
-        margin: 0px;
-        margin-bottom: 40px;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        label{
-            font-family:$heavy;
-            color: $azul;
-        }
+        margin-bottom: 5px;
+      }
+      input[type="text"],input[type="correo"] {
+        border-radius: 100px;
+        border: 1px solid #80633c;
+        margin-bottom: 20px;
+        padding: 8px 14px
+      }
+      input[type="submit"]{
+        width: 20vw;
+        margin: 0px auto;
+        background-color: $azul;
+        color: white;
+        border-radius: 100px;
+        padding: 10px 20px;
+        font-family: $heavy;
+        border: none;
+      }
     }
   }
   .decoracion_foot {

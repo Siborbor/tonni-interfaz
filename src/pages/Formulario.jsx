@@ -48,9 +48,9 @@ const Formulario = () => {
           <h6>en pocos minutos, tu pedido estará listo.</h6>
           <form>
             <label>nombre</label>
-            <input type="text" value="nombre" />
+            <input type="text" value="" />
             <label>correo electrónico</label>
-            <input type="correo" value="correo" />
+            <input type="correo" value=""/>
             <input type="submit" value="enviar" />
           </form>
         </div>
