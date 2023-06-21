@@ -38,6 +38,18 @@ const ConfirmaTuPedido = () => {
     return color;
   };
 
+  const handleClick = (tipo, producto, sabor, tipoSabor, endulzante) => {
+    navigate("/tonni/formulario", {
+      state: {
+        tipo: tipo,
+        producto: producto,
+        sabor: sabor,
+        tipoSabor: tipoSabor,
+        endulzante: endulzante,
+      },
+    });
+  };
+
   return (
     <div>
       <div className={`contenedor_confirmatupedido ${producto}`}>
@@ -146,7 +158,7 @@ const ConfirmaTuPedido = () => {
             {endulsante}
           </p>
         </motion.div>
-        <motion.div
+        <motion.div onClick={()=>handleClick(tipo, producto, sabor, tipoSabor, endulsante)}
           className="boton_confirmar"
           style={{
             backgroundColor: selectColor(producto),

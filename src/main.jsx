@@ -8,6 +8,7 @@ import EscojeTuSabor from "./pages/EscojeTuSabor.jsx";
 import EscojeTuSaborTwoStep from "./pages/EscojeTuSaborTwoStep.jsx";
 import EscojeTuEndulsante from "./pages/EscojeTuEndulsante.jsx";
 import ConfirmaTuPedido from "./pages/ConfirmaTuPedido.jsx";
+import Formulario from "./pages/Formulario.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "tonni/confirmatuPedido",
     element: <ConfirmaTuPedido/>,
+  },
+  {
+    path: "tonni/formulario",
+    element: <Formulario/>,
   },
 ]);
 
