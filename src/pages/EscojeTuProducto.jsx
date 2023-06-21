@@ -36,7 +36,7 @@ const EscojeTuProducto = () => {
         className="contenedor_EscojeTuProducto"
         style={{
           backgroundImage:
-            tonniTipo == "Original" ? null : `url('/backgroundSemillas.png')`,
+            tonniTipo == "Original" ? null : `url('/src/assets/backgroundSemillas.png')`,
         }}
       >
         {/* contenedor que contiene la cabezera */}

@@ -36,7 +36,12 @@ const EscojeTuSaborTwoStep = () => {
   return (
     <div>
       <div>
-        <div className={`contenedor_Escojetusabor ${producto}`}>
+        <div className="contenedor_Escojetusabor "style={{
+          backgroundImage:
+          producto == "LecheBlanca"
+              ? `url('/src/assets/backgroundLeche.png')`
+              : `url('/src/assets/backgroundSemillas.png')`,
+        }}>
           <CabezeraInterfaz producto={producto} />
           <div className="contenedor_texto">
             <motion.div

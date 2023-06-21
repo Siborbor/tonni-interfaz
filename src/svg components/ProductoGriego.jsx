@@ -1,5 +1,4 @@
 import * as React from "react"
-import x from "../../public/bebidaGriego.png"
 const ProductoGriego = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +16,7 @@ const ProductoGriego = (props) => (
           }}
         />
         <image
-          xlinkHref="/bebidaGriego.png"
+          xlinkHref="/src/assets/bebidaGriego.png"
           width={5466}
           height={5466}
           transform="scale(.1)"

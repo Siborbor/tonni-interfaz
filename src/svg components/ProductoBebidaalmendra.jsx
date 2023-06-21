@@ -16,7 +16,7 @@ const ProductoBebidaAlmendra = (props) => (
           }}
         />
         <image
-          xlinkHref="/bebidaalmendra.png"
+          xlinkHref="/src/assets/bebidaalmendra.png"
           width={5467}
           height={5467}
           transform="scale(.1)"

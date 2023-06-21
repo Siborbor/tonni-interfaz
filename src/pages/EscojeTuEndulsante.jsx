@@ -36,7 +36,7 @@ const EscojeTuEndulsante = () => {
         tipo: tipo,
         producto: producto,
         sabor: sabor,
-        tipoSabor:tipoSabor,
+        tipoSabor: tipoSabor,
         endulsante: endulsante,
       },
     });
@@ -44,7 +44,12 @@ const EscojeTuEndulsante = () => {
 
   return (
     <div>
-      <div className={`contenedor_escojeTuEndulsante ${producto}`}>
+      <div className="contenedor_escojeTuEndulsante" style={{
+          backgroundImage:
+          producto == "LecheBlanca"
+              ? `url('/src/assets/backgroundLeche.png')`
+              : `url('/src/assets/backgroundSemillas.png')`,
+        }}>
         <CabezeraInterfaz producto={producto} />
         <div className="contenedor-selects">
           <motion.div

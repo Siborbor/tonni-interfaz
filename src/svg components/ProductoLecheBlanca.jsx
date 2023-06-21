@@ -16,7 +16,7 @@ const ProductoLecheblanca = (props) => (
           }}
         />
         <image
-          xlinkHref="/lecheBlanca.png"
+          xlinkHref="/src/assets/lecheBlanca.png"
           width={5467}
           height={5466}
           transform="scale(.1)"

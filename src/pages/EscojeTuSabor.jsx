@@ -30,6 +30,7 @@ const EscojeTuSabor = () => {
     return color;
   };
 
+
   useEffect(() => {
     setTipo(location.state.tipo);
     setProducto(location.state.producto);
@@ -52,18 +53,32 @@ const EscojeTuSabor = () => {
     getSaborbyProduct(comboProductos, producto);
   }, [comboProductos]);
 
-  const handleClick = (tipo,producto,sabor) =>{
-    if(producto == "LecheBlanca"){
-      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep", {state:{tipo:tipo, producto:producto, sabor: sabor}});
+  const handleClick = (tipo, producto, sabor) => {
+    if (producto == "LecheBlanca") {
+      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep", {
+        state: { tipo: tipo, producto: producto, sabor: sabor },
+      });
     }
-    if(producto == "BebidadeAlmendras"){
-      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante", {state:{tipo:tipo, producto:producto, sabor: sabor}});
+    if (producto == "BebidadeAlmendras") {
+      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante", {
+        state: { tipo: tipo, producto: producto, sabor: sabor },
+      });
     }
-  }
+  };
 
   return (
     <div>
-      <div className={`contenedor_Escojetusabor ${producto}`}>
+      <div
+        className={`contenedor_Escojetusabor`}
+        style={{
+          backgroundImage:
+            producto == "BebidadeAlmendras"
+              ? `url('/src/assets/backgroundSemillas.png')`
+              : producto == "LecheBlanca"
+              ? `url('/src/assets/backgroundLeche.png')`
+              : null,
+        }}
+      >
         <CabezeraInterfaz producto={producto} />
         <div className="contenedor_texto">
           <motion.div
@@ -91,10 +106,14 @@ const EscojeTuSabor = () => {
           className="contenedor_productos"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ back: "backIn", duration: 0.5, delay: 0.9}}
+          transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
         >
           {sabores.map((el, index) => (
-            <div key={index} className="producto" onClick={()=>handleClick(tipo,producto,el.title)}>
+            <div
+              key={index}
+              className="producto"
+              onClick={() => handleClick(tipo, producto, el.title)}
+            >
               <img src={el.imagen} />
               <p>{el.title}</p>
             </div>

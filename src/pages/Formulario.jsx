@@ -1,12 +1,47 @@
 import BotonHome from "../svg components/BotonHome";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import OpcionOneCardHome from "../svg components/OpcionOneCardHome";
 import CabezeraFormulario from "../svg components/CabezeraFormulario";
 import FootFormulario from "../svg components/FootFormulario";
 
+let initial = { nombre: "", correo: "" };
+const pedido = {
+  tipo: "",
+  producto: "",
+  sabor: "",
+  tipoSabor: "",
+  endulsante: "",
+};
+
 const Formulario = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [dataform, setDataform] = useState(initial);
+  const [dataPedido, setDataPedido] = useState(pedido);
+
+  useEffect(() => {
+    setDataPedido({
+      ...dataPedido,
+      tipo: location.state.tipo,
+      producto: location.state.producto,
+      sabor: location.state.sabor,
+      tipoSabor: location.state.tipoSabor,
+      endulsante: location.state.endulsante,
+    });
+  }, []);
+
+  const handleChange = (e) => {
+    setDataform({ ...dataform, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(dataform);
+    console.log(dataPedido);
+  };
+
   return (
     <div>
       <div className="contrenedor_formulario">
@@ -40,22 +75,47 @@ const Formulario = () => {
           </motion.div>
         </div>
         <div className="contenido_formulario">
-          <h5>
+          <motion.h5
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
+          >
             ¡Espera!
             <br />
             Queremos saber más de ti.
-          </h5>
-          <h6>en pocos minutos, tu pedido estará listo.</h6>
-          <form>
+          </motion.h5>
+          <motion.h6
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.5 }}
+          >
+            en pocos minutos, tu pedido estará listo.
+          </motion.h6>
+          <motion.form
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
+            onSubmit={(e) => handleSubmit(e)}
+          >
             <label>nombre</label>
-            <input type="text" value="" />
+            <input
+              type="text"
+              name="nombre"
+              value={dataform.name}
+              onChange={(e) => handleChange(e)}
+            />
             <label>correo electrónico</label>
-            <input type="correo" value=""/>
+            <input
+              type="correo"
+              name="correo"
+              value={dataform.correo}
+              onChange={(e) => handleChange(e)}
+            />
             <input type="submit" value="enviar" />
-          </form>
+          </motion.form>
         </div>
         <div className="decoracion_foot">
-            <FootFormulario/>
+          <FootFormulario />
         </div>
       </div>
     </div>
