@@ -23,6 +23,21 @@ const ConfirmaTuPedido = () => {
   }, []);
 
   console.log(tipo, producto, sabor, tipoSabor, endulsante);
+  const selectColor = (producto) => {
+    let color;
+    if (producto == "BebidadeAlmendras") {
+      color = "#5C7C38";
+    }
+    if (producto == "LecheBlanca") {
+      color = "#fff";
+    }
+    if (producto == "Griego") {
+      color = "#0C0080";
+    }
+
+    return color;
+  };
+
   return (
     <div>
       <div className={`contenedor_confirmatupedido ${producto}`}>
@@ -130,6 +145,18 @@ const ConfirmaTuPedido = () => {
           >
             {endulsante}
           </p>
+        </motion.div>
+        <motion.div
+          className="boton_confirmar"
+          style={{
+            backgroundColor: selectColor(producto),
+            color: producto == "LecheBlanca" ? "#041689" : "#fff",
+          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: -10, opacity: 1 }}
+          transition={{ back: "backIn", duration: 0.5, delay: 1 }}
+        >
+          confirmar
         </motion.div>
         <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
       </div>
