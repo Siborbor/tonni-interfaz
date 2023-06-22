@@ -27,9 +27,16 @@ const EscojeTuProducto = () => {
   }, []);
 
   const pressProduct = (productoSelecionado, background) => {
-    navigate("/tonniOriginal/EscojeTuProducto/EscojeTuSabor", {
-      state: { tipo: tonniTipo, producto: productoSelecionado, background:background },
-    });
+    if(productoSelecionado=="Griego"){
+      navigate("/tonni/EscojeTuSaborGriego", {
+        state: { tipo: tonniTipo, producto: productoSelecionado},
+      });
+    }else{
+      navigate("/tonniOriginal/EscojeTuProducto/EscojeTuSabor", {
+        state: { tipo: tonniTipo, producto: productoSelecionado, background:background },
+      });
+    }
+    
   };
 
   return (
@@ -87,9 +94,9 @@ const EscojeTuProducto = () => {
         >
           {tonniTipo == "Original" ? (
             <>
-              <ProductoGriego onClick={() => pressProduct("Griego")} />
+              <ProductoGriego onClick={() => pressProduct("Griego","/src/assets/backgroundGriego.jpg")} />
               <ProductoLecheblanca
-                onClick={() => pressProduct("LecheBlanca","/src/assets/backgroundLeche.png")}
+                onClick={() => pressProduct("LecheBlanca","/src/assets/backgroundLeche.jpg")}
               />
             </>
           ) : (

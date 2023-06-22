@@ -22,7 +22,6 @@ const ConfirmaTuPedido = () => {
     setEndulsante(location.state.endulsante);
   }, []);
 
-  console.log(tipo, producto, sabor, tipoSabor, endulsante);
   const selectColor = (producto) => {
     let color;
     if (producto == "BebidadeAlmendras") {
@@ -51,7 +50,7 @@ const ConfirmaTuPedido = () => {
   };
 
   return (
-    <div>
+    <>
       <div
         className={`contenedor_confirmatupedido`}
         style={{
@@ -59,7 +58,7 @@ const ConfirmaTuPedido = () => {
             producto == "BebidadeAlmendras"
               ? `url('/src/assets/backgroundSemillas.png')`
               : producto == "LecheBlanca"
-              ? `url('/src/assets/backgroundLeche.png')`
+              ? `url('/src/assets/backgroundLeche.jpg')`
               : null,
         }}
       >
@@ -185,7 +184,7 @@ const ConfirmaTuPedido = () => {
         </motion.div>
         <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
       </div>
-    </div>
+    </>
   );
 };
 

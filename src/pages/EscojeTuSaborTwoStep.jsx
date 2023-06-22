@@ -37,10 +37,7 @@ const EscojeTuSaborTwoStep = () => {
     <div>
       <div>
         <div className="contenedor_Escojetusabor "style={{
-          backgroundImage:
-          producto == "LecheBlanca"
-              ? `url('/src/assets/backgroundLeche.png')`
-              : `url('/src/assets/backgroundSemillas.png')`,
+          backgroundImage: `url('/src/assets/backgroundLeche.jpg')`
         }}>
           <CabezeraInterfaz producto={producto} />
           <div className="contenedor_texto">

@@ -1,0 +1,44 @@
+@import "./vars.scss";
+
+.contenedor_pedidos {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  .contenedor_cabezera_pedidos {
+    position: relative;
+    width: 105vw;
+    top: 0px;
+  }
+  .contenedor_titulo_pedidos{
+    p{
+        font-family: $bold;
+        color: $azul;
+        text-align: center;
+        font-size: 7vw;
+        margin:-30px
+    }
+  }
+  .contenedor_datosPedidos{
+    display: flex;
+    gap: 20px;
+    margin-top: 70px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .pedido{
+        width: 20vw;
+        height: 30vw;
+        background-color: #D9DADB;
+        border-radius: 20px;
+        padding: 20px 30px;
+
+        p{
+            font-family: $heavy;
+            font-size: 1.5vw;
+            strong{
+                color: $azul;
+            }
+        }
+    }
+  }
+}

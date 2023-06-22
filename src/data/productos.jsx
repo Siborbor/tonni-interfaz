@@ -3,26 +3,56 @@ const productos = {
     imagen: "/bebidaGriego.png",
     sabor: [
       {
-        title: "mango",
-        imagen: "/src/assets/mango.png",
-      },
-      {
-        title: "frutilla",
+        title: "natural",
         imagen: "/src/assets/natural.png",
-      },
-      {
-        title: "limón Coco",
-        imagen: "/src/assets/limoncoco.png",
       },
       {
         title: "maracuyá",
         imagen: "/src/assets/maracuya.png",
       },
       {
-        title: "natural",
-        imagen: "/src/assets/natural.png",
+        title: "mango",
+        imagen: "/src/assets/mango.png",
+      },
+      {
+        title: "frutilla",
+        imagen: "/src/assets/frutillagriego.png",
+      },
+      {
+        title: "limón Coco",
+        imagen: "/src/assets/limoncoco.png",
+      },
+      {
+        title: "mora",
+        imagen: "/src/assets/mora.png",
+      },
+      {
+        title: "açaí y frutos rojos",
+        imagen: "/src/assets/acai.png",
       },
     ],
+    topic:[
+      {
+        title:"frutilla",
+        imagen:"/src/assets/frutilla.png"
+      },
+      {
+        title:"chispas de chocolate",
+        imagen:"/src/assets/chispas.png"
+      },
+      {
+        title:"granola",
+        imagen:"/src/assets/granola.png"
+      },
+      {
+        title:"banana",
+        imagen:"/src/assets/banana.png"
+      },
+      {
+        title:"crema de maní",
+        imagen:"/src/assets/mani.png"
+      },
+    ]
   },
   LecheBlanca: {
     imagen: "/lecheBlanca.png",

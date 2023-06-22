@@ -1,10 +1,9 @@
-import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import BotonAtras from "../components/BotonAtrasComponent";
 import Botonsiguiente from "../svg components/BotonSiguiente";
-import {motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const EscojeTuEndulsante = () => {
   const location = useLocation();
@@ -15,7 +14,6 @@ const EscojeTuEndulsante = () => {
   const [sabor, setSabor] = useState("");
   const [tipoSabor, setTiposabor] = useState("");
   const [endulsante, setEndulsante] = useState("");
-  const [rigth, setRigth] = useState("50%");
 
   useEffect(() => {
     setTipo(location.state.tipo);
@@ -24,13 +22,9 @@ const EscojeTuEndulsante = () => {
     setTiposabor(location.state.tipoSabor);
   }, []);
 
-  useEffect(() => {
-    if (endulsante.length > 0) {
-      setRigth("80%");
-    }
-  }, [endulsante]);
 
   const handleClick = (tipo, producto, sabor, endulsante, tipoSabor) => {
+   if(endulsante.length>0){
     navigate("/tonni/confirmatupedido", {
       state: {
         tipo: tipo,
@@ -40,16 +34,21 @@ const EscojeTuEndulsante = () => {
         endulsante: endulsante,
       },
     });
+   }
+    
   };
 
   return (
     <div>
-      <div className="contenedor_escojeTuEndulsante" style={{
+      <div
+        className="contenedor_escojeTuEndulsante"
+        style={{
           backgroundImage:
-          producto == "LecheBlanca"
-              ? `url('/src/assets/backgroundLeche.png')`
+            producto == "LecheBlanca"
+              ? `url('/src/assets/backgroundLeche.jpg')`
               : `url('/src/assets/backgroundSemillas.png')`,
-        }}>
+        }}
+      >
         <CabezeraInterfaz producto={producto} />
         <div className="contenedor-selects">
           <motion.div
@@ -115,27 +114,30 @@ const EscojeTuEndulsante = () => {
             display: "flex",
             position: "absolute",
             bottom: "10px",
-            right: rigth,
+            right: "80%",
           }}
         >
           <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
         </div>
-        <div
+        <motion.div
           className="boton_siguiente"
-          onClick={() => handleClick(tipo, producto, sabor, endulsante,tipoSabor)}
+          onClick={() =>
+            handleClick(tipo, producto, sabor, endulsante, tipoSabor)
+          }
           style={{
             display: "flex",
             position: "absolute",
             bottom: "30px",
-            right: "7%",
+            right: "6%",
           }}
+          initial={{ y: 50, opacity: 0, x: "0px" }}
+          animate={{ y: 0, opacity: 1, x: "0px" }}
+          transition={{ back: "backIn", duration: 0.5 }}
         >
-          {endulsante && (
-            <Botonsiguiente
-              color={producto == "LecheBlanca" ? "white" : "#757677"}
-            />
-          )}
-        </div>
+          <Botonsiguiente
+            color={producto == "LecheBlanca" ? "white" : "#757677"}
+          />
+        </motion.div>
       </div>
     </div>
   );

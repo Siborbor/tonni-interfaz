@@ -40,6 +40,7 @@ const Formulario = () => {
     e.preventDefault();
     console.log(dataform);
     console.log(dataPedido);
+    navigate("/tonni/thanks");
   };
 
   return (

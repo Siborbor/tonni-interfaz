@@ -4,16 +4,15 @@ import { motion } from "framer-motion";
 import BotonAtras from "../components/BotonAtrasComponent";
 import NumeroDos from "../svg components/Numerodos";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
-import dataproductos from "./../data/productos";
+import dataproductos from "../data/productos";
 
-const EscojeTuSabor = () => {
+const EscojeTuSaborGriego = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const [tipo, setTipo] = useState("");
   const [producto, setProducto] = useState("");
   const [sabores, setSabores] = useState([]);
-  const [background, setBackground] = useState("");
   const [comboProductos, setComboProductos] = useState(null);
 
   const selectColor = (producto) => {
@@ -36,7 +35,6 @@ const EscojeTuSabor = () => {
     setTipo(location.state.tipo);
     setProducto(location.state.producto);
     setComboProductos(dataproductos);
-    setBackground(location.state.background);
   }, []);
 
   useEffect(() => {
@@ -56,16 +54,9 @@ const EscojeTuSabor = () => {
   }, [comboProductos, producto]);
 
   const handleClick = (tipo, producto, sabor) => {
-    if (producto == "LecheBlanca") {
-      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep", {
-        state: { tipo: tipo, producto: producto, sabor: sabor },
-      });
-    }
-    if (producto == "BebidadeAlmendras") {
-      navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante", {
-        state: { tipo: tipo, producto: producto, sabor: sabor },
-      });
-    }
+    navigate("/toni/EscojeTutopping", {
+      state: { tipo: tipo, producto: producto, sabor: sabor },
+    });
   };
 
   return (
@@ -73,7 +64,7 @@ const EscojeTuSabor = () => {
       <div
         className={`contenedor_Escojetusabor`}
         style={{
-          backgroundImage: `url(${background})`}}
+          backgroundImage: `url(/src/assets/backgroundGriego.jpg)`}}
       >
         <CabezeraInterfaz producto={producto} />
         <div className="contenedor_texto">
@@ -121,4 +112,4 @@ const EscojeTuSabor = () => {
   );
 };
 
-export default EscojeTuSabor;
+export default EscojeTuSaborGriego;

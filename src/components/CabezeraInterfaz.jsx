@@ -1,5 +1,4 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import BotonHome from "../svg components/BotonHome";
 import OpcionOneCardHome from "../svg components/OpcionOneCardHome";
 import OpcionTwoCardHome from "../svg components/OpcionTwoCardHome";
@@ -9,7 +8,6 @@ import LogoLeche from "../svg components/LogoLeche";
 import { motion } from "framer-motion";
 
 const CabezeraInterfaz = ({producto}) => {
-  const location = useLocation();
   const navigate = useNavigate();
   return (
     <div>
@@ -23,7 +21,7 @@ const CabezeraInterfaz = ({producto}) => {
           <div onClick={() => navigate("/", { replace: true })}>
             <BotonHome />
           </div>
-          <p>Volver al inicio</p>
+          <p style={{color: producto=="Griego" ? "#fff" : "#001D85"}}>Volver al inicio</p>
         </motion.div>
         <motion.div
           className="contenedor_logos"
