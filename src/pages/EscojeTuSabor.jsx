@@ -13,6 +13,7 @@ const EscojeTuSabor = () => {
   const [tipo, setTipo] = useState("");
   const [producto, setProducto] = useState("");
   const [sabores, setSabores] = useState([]);
+  const [background, setBackground] = useState("");
   const [comboProductos, setComboProductos] = useState(null);
 
   const selectColor = (producto) => {
@@ -35,6 +36,7 @@ const EscojeTuSabor = () => {
     setTipo(location.state.tipo);
     setProducto(location.state.producto);
     setComboProductos(dataproductos);
+    setBackground(location.state.background);
   }, []);
 
   useEffect(() => {
@@ -71,13 +73,7 @@ const EscojeTuSabor = () => {
       <div
         className={`contenedor_Escojetusabor`}
         style={{
-          backgroundImage:
-            producto == "BebidadeAlmendras"
-              ? `url('/src/assets/backgroundSemillas.png')`
-              : producto == "LecheBlanca"
-              ? `url('/src/assets/backgroundLeche.png')`
-              : null,
-        }}
+          backgroundImage: `url(${background})`}}
       >
         <CabezeraInterfaz producto={producto} />
         <div className="contenedor_texto">

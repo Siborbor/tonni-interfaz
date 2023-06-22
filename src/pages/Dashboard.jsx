@@ -7,9 +7,18 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const pressButton = (tonniOpcion) => {
+
+  const getBackground= (tonniOpcion) =>{
+    if(tonniOpcion == "Semillas"){
+      return '/src/assets/backgroundSemillas.png'
+    }else{
+      return "none"
+    }
+  } 
+
+  const pressButton = (tonniOpcion, getBackground) => {
     navigate("/tonniOriginal/EscojeTuProducto", {
-      state: { tonni: tonniOpcion },
+      state: { tonni: tonniOpcion, background:getBackground },
     });
   };
 
@@ -37,7 +46,7 @@ const Dashboard = () => {
           <div className="contenedor_tarjeta">
             <motion.div
               className="tarjeta"
-              onClick={() => pressButton("Original")}
+              onClick={() => pressButton("Original",getBackground("Original"))}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ circ: "circIn", duration: 0.5, delay: 0.6 }}
@@ -47,7 +56,7 @@ const Dashboard = () => {
             </motion.div>
             <motion.div
               className="tarjeta"
-              onClick={() => pressButton("Semillas")}
+              onClick={() => pressButton("Semillas" ,getBackground("Semillas"))}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ circ: "circIn", duration: 0.5, delay: 0.7 }}

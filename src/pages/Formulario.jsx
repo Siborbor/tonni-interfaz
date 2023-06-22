@@ -101,13 +101,17 @@ const Formulario = () => {
             <input
               type="text"
               name="nombre"
+              required
+              autoComplete="off"
               value={dataform.name}
               onChange={(e) => handleChange(e)}
             />
             <label>correo electrónico</label>
             <input
-              type="correo"
+              type="email"
               name="correo"
+              autoComplete="off"
+              required
               value={dataform.correo}
               onChange={(e) => handleChange(e)}
             />

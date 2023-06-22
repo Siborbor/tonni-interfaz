@@ -19,6 +19,7 @@
     width: 100vw;
     right: 50%;
     transform: translate(50%);
+    
     .contenedor_botonHome {
       justify-content: center;
     }
@@ -33,6 +34,7 @@
       top: 0px;
       width: 61vw;
       z-index: -1;
+      left: -4px;
     }
   }
   .contenido_formulario {
@@ -58,7 +60,7 @@
         color: $azul;
         margin-bottom: 5px;
       }
-      input[type="text"],input[type="correo"] {
+      input[type="text"],input[type="email"] {
         border-radius: 100px;
         border: 1px solid #80633c;
         margin-bottom: 20px;
@@ -66,7 +68,7 @@
         font-family: $heavy;
       }
       input[type="submit"]{
-        width: 20vw;
+        min-width: 27vw;
         margin: 0px auto;
         background-color: $azul;
         color: white;
@@ -75,6 +77,11 @@
         font-family: $heavy;
         border: none;
       }
+      input:focus{
+        outline: none;
+        border: 1px solid $azul;
+      }
+      
     }
   }
   .decoracion_foot {

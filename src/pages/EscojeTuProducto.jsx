@@ -15,6 +15,7 @@ import BotonAtras from "../components/BotonAtrasComponent";
 const EscojeTuProducto = () => {
   //inicialisamos el estado con la props de tipo de leche
   const [tonniTipo, setToniTipo] = useState(null);
+  const [background, setBackground] =useState("");
   //utilizamos useLocation para obtener el estado de la pila anterior
   const location = useLocation();
   const navigate = useNavigate();
@@ -22,11 +23,12 @@ const EscojeTuProducto = () => {
   //cuando la pantalla se renderiza por primera vez setea el estado de tipo de tonni
   useEffect(() => {
     setToniTipo(location.state.tonni);
+    setBackground(location.state.background);
   }, []);
 
-  const pressProduct = (productoSelecionado) => {
+  const pressProduct = (productoSelecionado, background) => {
     navigate("/tonniOriginal/EscojeTuProducto/EscojeTuSabor", {
-      state: { tipo: tonniTipo, producto: productoSelecionado },
+      state: { tipo: tonniTipo, producto: productoSelecionado, background:background },
     });
   };
 
@@ -35,8 +37,7 @@ const EscojeTuProducto = () => {
       <div
         className="contenedor_EscojeTuProducto"
         style={{
-          backgroundImage:
-            tonniTipo == "Original" ? null : `url('/src/assets/backgroundSemillas.png')`,
+          backgroundImage:`url(${background})`,
         }}
       >
         {/* contenedor que contiene la cabezera */}
@@ -88,12 +89,12 @@ const EscojeTuProducto = () => {
             <>
               <ProductoGriego onClick={() => pressProduct("Griego")} />
               <ProductoLecheblanca
-                onClick={() => pressProduct("LecheBlanca")}
+                onClick={() => pressProduct("LecheBlanca","/src/assets/backgroundLeche.png")}
               />
             </>
           ) : (
             <ProductoBebidaAlmendra
-              onClick={() => pressProduct("BebidadeAlmendras")}
+              onClick={() => pressProduct("BebidadeAlmendras", "/src/assets/backgroundSemillas.png")}
             />
           )}
         </motion.div>
