@@ -4,15 +4,15 @@ const productos = {
     sabor: [
       {
         title: "natural",
-        imagen: "/src/assets/natural.png",
+        imagen: "/src/assets/naturalgriego.png",
       },
       {
         title: "maracuyá",
-        imagen: "/src/assets/maracuyá.png",
+        imagen: "/src/assets/maracuyágriego.png",
       },
       {
         title: "mango",
-        imagen: "/src/assets/mango.png",
+        imagen: "/src/assets/mangogriego.png",
       },
       {
         title: "frutilla",
@@ -20,15 +20,15 @@ const productos = {
       },
       {
         title: "limón Coco",
-        imagen: "/src/assets/limón Coco.png",
+        imagen: "/src/assets/limón Cocogriego.png",
       },
       {
         title: "mora",
-        imagen: "/src/assets/mora.png",
+        imagen: "/src/assets/moragriego.png",
       },
       {
         title: "açaí y frutos rojos",
-        imagen: "/src/assets/açaí y frutos rojos.png",
+        imagen: "/src/assets/açaí y frutos rojosgriego.png",
       },
     ],
     topic:[

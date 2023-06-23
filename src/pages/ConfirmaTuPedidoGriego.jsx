@@ -78,7 +78,7 @@ const ConfirmaTuPedidoGriego = () => {
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: -10, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
-              src={`/src/assets/${sabor}.png`}
+              src={`/src/assets/${sabor}griego.png`}
             />
             <motion.p
               initial={{ y: -50, opacity: 0 }}

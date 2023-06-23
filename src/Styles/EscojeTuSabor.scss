@@ -45,7 +45,7 @@
     gap: 15px;
     .select {
       img {
-        box-shadow: -9px 31px 35px -4px rgba(0, 0, 0, 0.3);
+        box-shadow: -9px 31px 35px -4px rgba(0, 0, 0, 0.45);
         border-radius: 121px;
         transition: 300ms;
       }
@@ -66,6 +66,7 @@
         margin: 0px;
         font-family: $heavy;
         font-size: 3vw;
+        height: 20px;
       }
     }
   }
