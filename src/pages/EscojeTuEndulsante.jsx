@@ -112,7 +112,7 @@ const EscojeTuEndulsante = () => {
             right: "80%",
           }}
         >
-          <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
+          <BotonAtras color={"white"}colorcirculo={"#ffffff4e"}/>
         </div>
         <motion.div
           className="boton_siguiente"
@@ -130,7 +130,8 @@ const EscojeTuEndulsante = () => {
           transition={{ back: "backIn", duration: 0.5 }}
         >
           <Botonsiguiente
-            color={producto == "LecheBlanca" ? "white" : "#757677"}
+            color={"white"}
+            colorcirculo={"#ffffff4e"} 
           />
         </motion.div>
       </div>

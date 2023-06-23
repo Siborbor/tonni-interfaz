@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import BotonAtras from "../svg components/BotonAtras"
 
-const BotonAtrasComponent = ({color}) => {
+const BotonAtrasComponent = ({color, colorcirculo}) => {
   const navigate = useNavigate();
   return (
     <>
@@ -14,7 +14,7 @@ const BotonAtrasComponent = ({color}) => {
         animate={{ y: -10, opacity: 1, x: "50%" }}
         transition={{ back: "backIn", duration: 0.5 }}
       >
-        <BotonAtras color={color}/>
+        <BotonAtras color={color} colorcirculo={colorcirculo}/>
       </motion.div>
     </>
   );

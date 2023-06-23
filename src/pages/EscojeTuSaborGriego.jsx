@@ -106,7 +106,7 @@ const EscojeTuSaborGriego = () => {
             </div>
           ))}
         </motion.div>
-        <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
+        <BotonAtras color={"white"} />
       </div>
     </div>
   );

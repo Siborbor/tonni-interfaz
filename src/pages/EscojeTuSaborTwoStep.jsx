@@ -77,7 +77,7 @@ const EscojeTuSaborTwoStep = () => {
               </div>
             ))}
           </motion.div>
-          <BotonAtras color="white" />
+          <BotonAtras color="white" colorcirculo={"#ffffff4e"}/>
         </div>
       </div>
     </div>
