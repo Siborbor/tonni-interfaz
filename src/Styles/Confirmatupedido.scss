@@ -10,6 +10,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   flex-direction: column;
+  overflow: hidden;
   .title {
     font-family: $bold;
     font-size: 6vw;
@@ -19,7 +20,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 1px;
+    padding-inline: 9vw;
+    
     p,
     h5 {
       font-family: $heavy;
@@ -40,6 +43,8 @@
       justify-content: center;
       align-items: center;
       width: 30vw;
+      text-align: center;
+      
     }
     .contenedor_mas {
       p {
@@ -49,6 +54,17 @@
     img {
       width: 28vw;
     }
+    .contenedor_topping {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      text-align: center;
+      .wrapper_toppings {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   }
   .contenedor_endulsante {
     border: 1px solid blue;
@@ -56,13 +72,13 @@
     border-radius: 26px;
     margin-top: 30px;
     padding: 10px 22px;
-    p{
+    p {
       font-family: $heavy;
       margin: 0px;
       font-size: 2.5vw;
     }
   }
-  .boton_confirmar{
+  .boton_confirmar {
     margin-top: 20px;
     padding: 7px 20px;
     border-radius: 100px;

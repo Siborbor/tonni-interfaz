@@ -4,7 +4,7 @@ import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import BotonAtras from "../components/BotonAtrasComponent";
 import { motion } from "framer-motion";
 
-const ConfirmaTuPedido = () => {
+const ConfirmaTuPedidoSemilla = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -54,7 +54,7 @@ const ConfirmaTuPedido = () => {
       <div
         className={`contenedor_confirmatupedido`}
         style={{
-          backgroundImage: `url('/src/assets/backgroundLeche.jpg')`,
+          backgroundImage: `url('/src/assets/backgroundSemillas.png')`,
         }}
       >
         <CabezeraInterfaz producto={producto} />
@@ -183,4 +183,4 @@ const ConfirmaTuPedido = () => {
   );
 };
 
-export default ConfirmaTuPedido;
+export default ConfirmaTuPedidoSemilla;

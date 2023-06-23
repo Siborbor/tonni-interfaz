@@ -5,6 +5,7 @@ import BotonAtras from "../components/BotonAtrasComponent";
 import NumeroTres from "../svg components/NumeroTres";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import dataproductos from "../data/productos";
+import Botonsiguiente from "../svg components/BotonSiguiente";
 
 const EscojeTuTopping = () => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const EscojeTuTopping = () => {
   const [producto, setProducto] = useState("");
   const [sabores, setSabores] = useState([]);
   const [dataTopping, setdataTopings] = useState([]);
+  const [toppingSelect, setToppingSelect] = useState([]);
   const [comboProductos, setComboProductos] = useState(null);
 
   const selectColor = (producto) => {
@@ -36,15 +38,31 @@ const EscojeTuTopping = () => {
     setProducto(location.state.producto);
     setSabores(location.state.sabor);
     setComboProductos(dataproductos);
-    
   }, []);
 
   useEffect(() => {
     setdataTopings(dataproductos.Griego.topic);
-    console.log(tipo,producto,sabores)
+    console.log(tipo, producto, sabores);
   }, [comboProductos, producto]);
 
-  const handleClick = (tipo, producto, sabor) => {};
+  const handleSelect = (topping) => {
+    if (!toppingSelect.includes(topping) && toppingSelect.length < 2) {
+      setToppingSelect([...toppingSelect, topping]);
+    } else {
+      let newArray = toppingSelect.filter(function (element) {
+        return element !== topping;
+      });
+      setToppingSelect(newArray);
+    }
+  };
+
+  const handleClik = () => {
+    if(toppingSelect.length>0){
+      navigate("/toni/confirmatuPedidoGriego", {
+        state: { tipo, producto, sabor: sabores, toppings: toppingSelect },
+      });
+    }
+  };
 
   return (
     <div>
@@ -76,7 +94,7 @@ const EscojeTuTopping = () => {
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
             <p style={{ color: producto == "Griego" ? "#fff" : "#757677" }}>
-              (Elige solo 1)
+              (elige mínimo 1, máximo 2)
             </p>
           </motion.div>
         </div>
@@ -89,8 +107,10 @@ const EscojeTuTopping = () => {
           {dataTopping.map((el, index) => (
             <div
               key={index}
-              className="producto"
-              onClick={() => handleClick(tipo, producto, el.title)}
+              className={`producto ${
+                toppingSelect.includes(el.title) ? "select" : "unSelect"
+              }`}
+              onClick={() => handleSelect(el.title)}
             >
               <img src={el.imagen} />
               <p
@@ -103,7 +123,33 @@ const EscojeTuTopping = () => {
             </div>
           ))}
         </motion.div>
-        <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
+        <div
+          style={{
+            display: "flex",
+            position: "absolute",
+            bottom: "10px",
+            right: "80%",
+          }}
+        >
+          <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
+        </div>
+        <motion.div
+          className="boton_siguiente"
+          onClick={() => handleClik()}
+          style={{
+            display: "flex",
+            position: "absolute",
+            bottom: "30px",
+            right: "6%",
+          }}
+          initial={{ y: 50, opacity: 0, x: "0px" }}
+          animate={{ y: 0, opacity: 1, x: "0px" }}
+          transition={{ back: "backIn", duration: 0.5 }}
+        >
+          <Botonsiguiente
+            color={producto == "LecheBlanca" ? "white" : "#757677"}
+          />
+        </motion.div>
       </div>
     </div>
   );

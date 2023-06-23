@@ -13,6 +13,7 @@ const pedido = {
   sabor: "",
   tipoSabor: "",
   endulsante: "",
+  toppings:[],
 };
 
 const Formulario = () => {
@@ -29,6 +30,7 @@ const Formulario = () => {
       sabor: location.state.sabor,
       tipoSabor: location.state.tipoSabor,
       endulsante: location.state.endulsante,
+      toppings: location.state.toppings
     });
   }, []);
 

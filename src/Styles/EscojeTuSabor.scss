@@ -43,6 +43,13 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
+    .select {
+      img {
+        box-shadow: -9px 31px 35px -4px rgba(0, 0, 0, 0.3);
+        border-radius: 121px;
+        transition: 300ms;
+      }
+    }
     .producto {
       display: flex;
       flex-direction: column;
@@ -50,8 +57,10 @@
       justify-content: center;
       max-width: 28vw;
       text-align: center;
+      
       img {
         width: 25vw;
+        transition: 300ms;
       }
       p {
         margin: 0px;

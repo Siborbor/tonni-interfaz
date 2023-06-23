@@ -5,7 +5,7 @@ import BotonAtras from "../components/BotonAtrasComponent";
 import Botonsiguiente from "../svg components/BotonSiguiente";
 import { motion } from "framer-motion";
 
-const EscojeTuEndulsante = () => {
+const EscojeTuEndulsanteSemilla = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -22,18 +22,20 @@ const EscojeTuEndulsante = () => {
     setTiposabor(location.state.tipoSabor);
   }, []);
 
+
   const handleClick = (tipo, producto, sabor, endulsante, tipoSabor) => {
-    if (endulsante.length > 0) {
-      navigate("/tonni/confirmatupedido", {
-        state: {
-          tipo: tipo,
-          producto: producto,
-          sabor: sabor,
-          tipoSabor: tipoSabor,
-          endulsante: endulsante,
-        },
-      });
-    }
+   if(endulsante.length>0){
+    navigate("/toni/confirmatuPedidoSemilla", {
+      state: {
+        tipo: tipo,
+        producto: producto,
+        sabor: sabor,
+        tipoSabor: tipoSabor,
+        endulsante: endulsante,
+      },
+    });
+   }
+    
   };
 
   return (
@@ -41,7 +43,7 @@ const EscojeTuEndulsante = () => {
       <div
         className="contenedor_escojeTuEndulsante"
         style={{
-          backgroundImage: `url('/src/assets/backgroundLeche.jpg')`,
+          backgroundImage:`url('/src/assets/backgroundSemillas.png')`,
         }}
       >
         <CabezeraInterfaz producto={producto} />
@@ -138,4 +140,4 @@ const EscojeTuEndulsante = () => {
   );
 };
 
-export default EscojeTuEndulsante;
+export default EscojeTuEndulsanteSemilla;

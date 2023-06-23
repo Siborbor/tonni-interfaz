@@ -12,7 +12,7 @@ import ProductoLecheblanca from "../svg components/ProductoLecheBlanca";
 import ProductoBebidaAlmendra from "../svg components/ProductoBebidaalmendra";
 import BotonAtras from "../components/BotonAtrasComponent";
 
-const EscojeTuProducto = () => {
+const EscojeTuProductoSemilla = () => {
   //inicialisamos el estado con la props de tipo de leche
   const [tonniTipo, setToniTipo] = useState(null);
   //utilizamos useLocation para obtener el estado de la pila anterior
@@ -24,23 +24,19 @@ const EscojeTuProducto = () => {
     setToniTipo(location.state.tonni);
   }, []);
 
-  const pressProduct = (productoSelecionado) => {
-    if(productoSelecionado=="Griego"){
-      navigate("/tonni/EscojeTuSaborGriego", {
-        state: { tipo: tonniTipo, producto: productoSelecionado},
+  const pressProduct = (productoSelecionado, background) => {
+      navigate("/toni/EscojeTuSaborSemilla", {
+        state: { tipo: tonniTipo, producto: productoSelecionado, background:background },
       });
-    }else{
-      navigate("/toni/EscojeTuSaborLeche", {
-        state: { tipo: tonniTipo, producto: productoSelecionado},
-      });
-    }
-    
   };
 
   return (
     <>
       <div
         className="contenedor_EscojeTuProducto"
+        style={{
+          backgroundImage:`url(/src/assets/backgroundSemillas.png)`,
+        }}
       >
         {/* contenedor que contiene la cabezera */}
         <motion.div
@@ -89,14 +85,14 @@ const EscojeTuProducto = () => {
         >
           {tonniTipo == "Original" ? (
             <>
-              <ProductoGriego onClick={() => pressProduct("Griego")} />
+              <ProductoGriego onClick={() => pressProduct("Griego","/src/assets/backgroundGriego.jpg")} />
               <ProductoLecheblanca
-                onClick={() => pressProduct("LecheBlanca")}
+                onClick={() => pressProduct("LecheBlanca","/src/assets/backgroundLeche.jpg")}
               />
             </>
           ) : (
             <ProductoBebidaAlmendra
-              onClick={() => pressProduct("BebidadeAlmendras")}
+              onClick={() => pressProduct("BebidadeAlmendras", "/src/assets/backgroundSemillas.png")}
             />
           )}
         </motion.div>
@@ -107,4 +103,4 @@ const EscojeTuProducto = () => {
   );
 };
 
-export default EscojeTuProducto;
+export default EscojeTuProductoSemilla;

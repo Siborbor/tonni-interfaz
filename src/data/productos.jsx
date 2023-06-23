@@ -8,7 +8,7 @@ const productos = {
       },
       {
         title: "maracuyá",
-        imagen: "/src/assets/maracuya.png",
+        imagen: "/src/assets/maracuyá.png",
       },
       {
         title: "mango",
@@ -20,7 +20,7 @@ const productos = {
       },
       {
         title: "limón Coco",
-        imagen: "/src/assets/limoncoco.png",
+        imagen: "/src/assets/limón Coco.png",
       },
       {
         title: "mora",
@@ -28,7 +28,7 @@ const productos = {
       },
       {
         title: "açaí y frutos rojos",
-        imagen: "/src/assets/acai.png",
+        imagen: "/src/assets/açaí y frutos rojos.png",
       },
     ],
     topic:[
@@ -38,7 +38,7 @@ const productos = {
       },
       {
         title:"chispas de chocolate",
-        imagen:"/src/assets/chispas.png"
+        imagen:"/src/assets/chispas de chocolate.png"
       },
       {
         title:"granola",
@@ -50,7 +50,7 @@ const productos = {
       },
       {
         title:"crema de maní",
-        imagen:"/src/assets/mani.png"
+        imagen:"/src/assets/crema de maní.png"
       },
     ]
   },
