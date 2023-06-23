@@ -14,7 +14,7 @@ const Dashboard = () => {
         state: { tonni: tonniOpcion},
       });
     }else{
-      navigate("/tonniOriginal/EscojeTuProducto", {
+      navigate("/toni/EscojeTuProducto", {
         state: { tonni: tonniOpcion},
       });
     }

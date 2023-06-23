@@ -23,7 +23,7 @@ const ConfirmaTuPedidoGriego = () => {
   }, []);
 
   const handleClick = (tipo, producto, sabor, tipoSabor, endulsante) => {
-    navigate("/tonni/formulario", {
+    navigate("/toni/formulario", {
       state: {
         tipo: tipo,
         producto: producto,

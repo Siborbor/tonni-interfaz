@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import {motion } from "framer-motion";
 import BotonAtras from "../components/BotonAtrasComponent";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import dataproductos from "../data/productos";
@@ -23,7 +23,7 @@ const EscojeTuSaborTwoStep = () => {
   }, []);
 
   const handleClick = (tipo, producto, sabor, tipoSaborElegido) => {
-    navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante", {
+    navigate("/toni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante", {
       state: {
         tipo: tipo,
         producto: producto,
@@ -57,7 +57,7 @@ const EscojeTuSaborTwoStep = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
             >
-              <p>(Elige solo 1)</p>
+              <p style={{color:"#757677"}}>(Elige solo 1)</p>
             </motion.div>
           </div>
           <motion.div
@@ -73,7 +73,7 @@ const EscojeTuSaborTwoStep = () => {
                 onClick={() => handleClick(tipo, producto, sabor, el.title)}
               >
                 <img src={el.imagen} />
-                <p>{el.title}</p>
+                <p style={{color:"white"}}>{el.title}</p>
               </div>
             ))}
           </motion.div>

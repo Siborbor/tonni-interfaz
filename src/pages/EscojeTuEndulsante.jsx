@@ -24,7 +24,7 @@ const EscojeTuEndulsante = () => {
 
   const handleClick = (tipo, producto, sabor, endulsante, tipoSabor) => {
     if (endulsante.length > 0) {
-      navigate("/tonni/confirmatupedido", {
+      navigate("/toni/confirmatupedido", {
         state: {
           tipo: tipo,
           producto: producto,

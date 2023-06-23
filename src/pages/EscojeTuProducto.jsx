@@ -26,7 +26,7 @@ const EscojeTuProducto = () => {
 
   const pressProduct = (productoSelecionado) => {
     if(productoSelecionado=="Griego"){
-      navigate("/tonni/EscojeTuSaborGriego", {
+      navigate("/toni/EscojeTuSaborGriego", {
         state: { tipo: tonniTipo, producto: productoSelecionado},
       });
     }else{

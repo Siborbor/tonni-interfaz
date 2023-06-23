@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "tonniOriginal/EscojeTuProducto",
+    path: "toni/EscojeTuProducto",
     element: <EscojeTuProducto />,
   },
   {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     element: <EscojeTuSaborLeche />,
   },
   {
-    path: "tonni/EscojeTuSaborGriego",
+    path: "toni/EscojeTuSaborGriego",
     element:<EscojeTuSaborGriego/>,
   },
   {
@@ -47,11 +47,11 @@ const router = createBrowserRouter([
     element:<EscojeTuTopping/>,
   },
   {
-    path: "tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep",
+    path: "toni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep",
     element: <EscojeTuSaborTwoStep />,
   },
   {
-    path: "tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante",
+    path: "toni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante",
     element: <EscojeTuEndulsante />,
   },
   {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
     element: <EscojeTuEndulsanteSemilla/>,
   },
   {
-    path: "tonni/confirmatuPedido",
+    path: "toni/confirmatuPedido",
     element: <ConfirmaTuPedido/>,
   },
   {
@@ -71,15 +71,15 @@ const router = createBrowserRouter([
     element: <ConfirmaTuPedidoSemilla/>,
   },
   {
-    path: "tonni/formulario",
+    path: "toni/formulario",
     element: <Formulario/>,
   },
   {
-    path: "tonni/thanks",
+    path: "toni/thanks",
     element:<Thanks/>,
   },
   {
-    path: "tonni/pedido",
+    path: "toni/pedido",
     element:<Pedido/>,
   }
 ]);

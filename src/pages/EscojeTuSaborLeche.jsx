@@ -56,7 +56,7 @@ const EscojeTuSaborLeche = () => {
   }, [comboProductos, producto]);
 
   const handleClick = (tipo, producto, sabor) => {
-    navigate("/tonni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep", {
+    navigate("/toni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep", {
       state: { tipo: tipo, producto: producto, sabor: sabor },
     });
   };
@@ -88,7 +88,7 @@ const EscojeTuSaborLeche = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
-            <p style={{color: producto=="Griego"?"#fff":"#757677"}}>(Elige solo 1)</p>
+            <p style={{color: "#757677"}}>(Elige solo 1)</p>
           </motion.div>
         </div>
         <motion.div

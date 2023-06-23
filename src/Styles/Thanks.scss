@@ -1,0 +1,82 @@
+.flotante {
+  position: absolute;
+}
+
+.logoTonniWhite {
+  width: 40vw;
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+}
+
+.contenedor_deco1 {
+  top: 16vh;
+  left: 5vw;
+  img {
+    width: 34vw;
+  }
+}
+
+.contenedor_deco2 {
+  top: 19vh;
+  right: 11vw;
+  img {
+    width: 15vw;
+  }
+}
+
+.contenedor_deco3 {
+  top: 35vh;
+  right: -3px;
+  img {
+    width: 7vw;
+  }
+}
+
+.contenedor_deco4 {
+  top: 60vh;
+  right: 10vw;
+  img {
+    width: 6vw;
+  }
+}
+
+.contenedor_deco5 {
+  top: 62vh;
+  right: -2vw;
+  z-index: 9999;
+  img {
+    width: 50vw;
+  }
+}
+
+.contenedor_deco6 {
+  top: 77vh;
+  left: 14vw;
+  z-index: 9999;
+  img {
+    width: 14vw;
+  }
+}
+
+.contenedor_deco7 {
+  top: 57vh;
+  left: 0vw;
+  z-index: 9999;
+  img {
+    width: 8vw;
+  }
+}
+
+.floating { 
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
