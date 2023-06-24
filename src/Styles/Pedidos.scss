@@ -1,7 +1,6 @@
 @import "./vars.scss";
 
 .contenedor_pedidos {
-  height: 100vh;
   position: relative;
   overflow: hidden;
   .contenedor_cabezera_pedidos {
@@ -9,36 +8,55 @@
     width: 105vw;
     top: 0px;
   }
-  .contenedor_titulo_pedidos{
-    p{
-        font-family: $bold;
-        color: $azul;
-        text-align: center;
-        font-size: 7vw;
-        margin:-30px
+  .contenedor_titulo_pedidos {
+    p {
+      font-family: $bold;
+      color: $azul;
+      text-align: center;
+      font-size: 7vw;
+      margin: -30px;
     }
   }
-  .contenedor_datosPedidos{
+  .contenedor_datosPedidos {
     display: flex;
     gap: 20px;
     margin-top: 70px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    .pedido{
-        width: 20vw;
-        height: 30vw;
-        background-color: #D9DADB;
-        border-radius: 20px;
-        padding: 20px 30px;
-
-        p{
-            font-family: $heavy;
-            font-size: 1.5vw;
-            strong{
-                color: $azul;
-            }
+    .pedido {
+      width: 20vw;
+      height: 40vw;
+      background-color: #d9dadb;
+      border-radius: 20px;
+      padding: 20px 30px;
+      position: relative;
+      p {
+        font-family: $heavy;
+        font-size: 1.5vw;
+        strong {
+          color: $azul;
         }
+      }
+
+      .contenedor_boton{
+        .boton_comensar {
+          font-family: $bold;
+          font-size: 1.5vw;
+          color: white;
+          background-color: $verde;
+          position: absolute;
+          bottom: 18px;
+          padding: 10px 19px;
+          border: none;
+          border-radius: 100px;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
     }
   }
 }

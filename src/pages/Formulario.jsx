@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import OpcionOneCardHome from "../svg components/OpcionOneCardHome";
 import CabezeraFormulario from "../svg components/CabezeraFormulario";
 import FootFormulario from "../svg components/FootFormulario";
+import Modal from "react-modal";
 
 let initial = { nombre: "", correo: "" };
 const pedido = {
@@ -13,7 +14,25 @@ const pedido = {
   sabor: "",
   tipoSabor: "",
   endulsante: "",
-  toppings:[],
+  toppings: [],
+};
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#001D85",
+    borderRadius: "40px",
+    padding: "8vw"
+  },
 };
 
 const Formulario = () => {
@@ -21,6 +40,9 @@ const Formulario = () => {
   const location = useLocation();
   const [dataform, setDataform] = useState(initial);
   const [dataPedido, setDataPedido] = useState(pedido);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  let subtitle;
+  const apiUrl = "http://localhost/apiToniBar/public/api/pedido";
 
   useEffect(() => {
     setDataPedido({
@@ -30,7 +52,7 @@ const Formulario = () => {
       sabor: location.state.sabor,
       tipoSabor: location.state.tipoSabor,
       endulsante: location.state.endulsante,
-      toppings: location.state.toppings
+      toppings: location.state.toppings,
     });
   }, []);
 
@@ -40,10 +62,61 @@ const Formulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(dataform);
-    console.log(dataPedido);
-    navigate("/toni/thanks");
+    const postData = {
+      user: dataform.nombre,
+      correo: dataform.correo,
+      tipo: dataPedido.tipo,
+      producto: dataPedido.producto,
+      sabor: dataPedido.sabor,
+      tiposabor: dataPedido.tipoSabor,
+      endulzante: dataPedido.endulsante,
+      toppings:
+        dataPedido.toppings == undefined
+          ? ""
+          : dataPedido.toppings.length == 1
+          ? dataPedido.toppings[0]
+          : dataPedido.toppings[0] + ", " + dataPedido.toppings[1],
+      estado: "pendiente",
+    };
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(postData),
+    };
+
+    fetch(apiUrl, options)
+      .then((response) => response.json())
+      .then((data) => {
+        //Manipular los datos de la respuesta
+        if (data.msg === "200") {
+          navigate("/toni/thanks");
+        } else {
+          console.log("solo puedes pedir una vez :p");
+          openModal();
+        }
+      })
+      .catch((error) => {
+        //Manejar cualquier error de la solicitud
+        console.log("Ocurrió un error:", error);
+      });
   };
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <div>
@@ -125,6 +198,37 @@ const Formulario = () => {
           <FootFormulario />
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        ariaHideApp={false}
+        contentLabel="Example Modal"
+      >
+        <h2
+          style={{
+            color: "white",
+            fontFamily: "OakesGroteskBold",
+            fontSize: "4.5vw",
+          }}
+        >
+          Solo puedes pedir una vez!
+        </h2>
+        <button
+          onClick={closeModal}
+          style={{
+            backgroundColor: "white",
+            border: "none",
+            fontFamily: "SackersGothicStdHeavy",
+            color: "#001D85",
+            borderRadius: "100px",
+            padding: "8px 20px"
+          }}
+        >
+          close
+        </button>
+      </Modal>
     </div>
   );
 };

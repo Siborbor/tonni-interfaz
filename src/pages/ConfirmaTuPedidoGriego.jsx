@@ -69,20 +69,20 @@ const ConfirmaTuPedidoGriego = () => {
           <div className="contenedor_producto">
             <motion.h5
               initial={{ y: -50, opacity: 0 }}
-              animate={{ y: -10, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
             >
               Producto
             </motion.h5>
             <motion.img
               initial={{ y: -50, opacity: 0 }}
-              animate={{ y: -10, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
               src={`/src/assets/${sabor}griego.png`}
             />
             <motion.p
               initial={{ y: -50, opacity: 0 }}
-              animate={{ y: -10, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
               style={{
                 color: "white",
@@ -94,7 +94,7 @@ const ConfirmaTuPedidoGriego = () => {
           <div className="contenedor_mas">
             <motion.p
               initial={{ y: -50, opacity: 0 }}
-              animate={{ y: -10, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.6 }}
             >
               +
@@ -103,23 +103,23 @@ const ConfirmaTuPedidoGriego = () => {
           <div className="contenedor_topping">
             <motion.h5
               initial={{ y: -50, opacity: 0 }}
-              animate={{ y: -10, opacity: 1 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
             >
               Toppings
             </motion.h5>
-            <div className="wrapper_toppings">
+            <div className="wrapper_toppings" style={{display: toppings.length <2  ? "flex": "grid"}}>
               {toppings.map((el, key) => (
                 <div key={key} className="topping">
                   <motion.img
                     initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: -10, opacity: 1 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
                     src={`/src/assets/${el}.png`}
                   />
                   <motion.p
                     initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: -10, opacity: 1 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
                     style={{
                       color: "white",
