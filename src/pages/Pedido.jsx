@@ -4,23 +4,12 @@ const Pedido = () => {
   const [data, setData] = useState([]);
   const apiUrl = "http://localhost/apiToniBar/public/api/pedido";
 
-  // const handleClick = (id) => {
-  //   const elementocompletado = data.map((el) => {
-  //     if ((el.id = id)) {
-  //       return { ...el, estado: "completado" };
-  //     }
-  //     return el;
-  //   });
-  //   setData(elementocompletado);
-  // };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(apiUrl); // Reemplaza '/api/data' con la ruta de tu API
+        const response = await fetch(apiUrl);
         if (response.ok) {
           const newData = await response.json();
-          console.log(newData)
           setData(newData);
         }
       } catch (error) {
@@ -30,14 +19,48 @@ const Pedido = () => {
 
     fetchData();
 
-    // Configura un intervalo para consultar los datos cada cierto tiempo
-    const interval = setInterval(fetchData, 1000); // Por ejemplo, cada 5 segundos
+    const interval = setInterval(fetchData, 3000);
 
-    // Limpia el intervalo cuando el componente se desmonta
     return () => {
       clearInterval(interval);
     };
   }, []);
+
+  const handlePedido = (id, pedido, estado) => {
+    console.log(id);
+    const putData = {
+      user: pedido.user,
+      correo: pedido.correo,
+      tipo: pedido.tipo,
+      producto: pedido.producto,
+      sabor: pedido.sabor,
+      tiposabor: pedido.tipoSabor,
+      endulzante: pedido.endulsante,
+      toppings: pedido.toppings,
+      estado: estado,
+    };
+    console.log(putData);
+
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(putData),
+    };
+
+    fetch(`http://localhost/apiToniBar/public/api/pedidos/${id}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        //Manipular los datos de la respuesta
+        console.log(data);
+      })
+      .catch((error) => {
+        //Manejar cualquier error de la solicitud
+        console.log("Ocurrió un error:", error);
+      });
+  };
 
   return (
     <div>
@@ -51,8 +74,8 @@ const Pedido = () => {
         <div className="contenedor_datosPedidos">
           {data.map((el, index) => (
             <div key={index} className="pedido">
-              <p>
-                <strong style={{ color: "#80B7FF" }}>Estado:</strong>
+              <p style={{fontSize:"1.8vw"}}>
+                <strong style={{ color: "#567A3A" }}>Estado:</strong>
                 {el.estado}
               </p>
               <p>
@@ -86,7 +109,32 @@ const Pedido = () => {
               )}
               {el.estado == "pendiente" && (
                 <div className="contenedor_boton">
-                  <button className="boton_comensar">Comensar pedido</button>
+                  <button
+                    className="boton_comensar"
+                    onClick={() => handlePedido(el.id, el, "en proceso")}
+                  >
+                    Comensar pedido
+                  </button>
+                </div>
+              )}
+              {el.estado == "en proceso" && (
+                <div className="contenedor_boton">
+                  <button
+                    className="boton_comensar"
+                    onClick={() => handlePedido(el.id, el, "completado")}
+                  >
+                    finalizar pedido
+                  </button>
+                </div>
+              )}
+              {el.estado == "completado" && (
+                <div className="contenedor_boton">
+                  <button
+                    className="boton_comensar"
+                    onClick={() => handlePedido(el.id, el, "entregado")}
+                  >
+                    Pedido entregado
+                  </button>
                 </div>
               )}
             </div>
