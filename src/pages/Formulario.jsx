@@ -42,7 +42,7 @@ const Formulario = () => {
   const [dataPedido, setDataPedido] = useState(pedido);
   const [modalIsOpen, setIsOpen] = useState(false);
   let subtitle;
-  const apiUrl = "http://localhost/apiToniBar/public/api/pedido";
+  const apiUrl = "https://api.shaketonibar.111.com.ec/api/pedido";
 
   useEffect(() => {
     setDataPedido({
@@ -95,7 +95,6 @@ const Formulario = () => {
         if (data.msg === "200") {
           navigate("/toni/thanks");
         } else {
-          console.log("solo puedes pedir una vez :p");
           openModal();
         }
       })

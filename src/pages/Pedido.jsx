@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CabezeraPedido from "../svg components/CabezeraPedido";
 const Pedido = () => {
   const [data, setData] = useState([]);
-  const apiUrl = "http://localhost/apiToniBar/public/api/pedido";
+  const apiUrl = "https://api.shaketonibar.111.com.ec/api/pedido";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +25,18 @@ const Pedido = () => {
       clearInterval(interval);
     };
   }, []);
+
+  const colorEstadoPedido = (estado) => {
+    if (estado == "pendiente") {
+      return "#FF313D";
+    } else if (estado == "en proceso") {
+      return "#DF9801";
+    } else if (estado == "completado") {
+      return "#11189B";
+    } else {
+      return "#55793F";
+    }
+  };
 
   const handlePedido = (id, pedido, estado) => {
     console.log(id);
@@ -50,7 +62,7 @@ const Pedido = () => {
       body: JSON.stringify(putData),
     };
 
-    fetch(`http://localhost/apiToniBar/public/api/pedidos/${id}`, options)
+    fetch(`https://api.shaketonibar.111.com.ec/api/pedidos/${id}`, options)
       .then((response) => response.json())
       .then((data) => {
         //Manipular los datos de la respuesta
@@ -74,8 +86,10 @@ const Pedido = () => {
         <div className="contenedor_datosPedidos">
           {data.map((el, index) => (
             <div key={index} className="pedido">
-              <p style={{fontSize:"1.8vw"}}>
-                <strong style={{ color: "#567A3A" }}>Estado:</strong>
+              <p style={{ fontSize: "1.8vw" }}>
+                <strong style={{ color: colorEstadoPedido(el.estado) }}>
+                  Estado: 
+                </strong>
                 {el.estado}
               </p>
               <p>
@@ -111,9 +125,10 @@ const Pedido = () => {
                 <div className="contenedor_boton">
                   <button
                     className="boton_comensar"
+                    style={{ backgroundColor: colorEstadoPedido(el.estado) }}
                     onClick={() => handlePedido(el.id, el, "en proceso")}
                   >
-                    Comensar pedido
+                    Empezar pedido
                   </button>
                 </div>
               )}
@@ -121,6 +136,7 @@ const Pedido = () => {
                 <div className="contenedor_boton">
                   <button
                     className="boton_comensar"
+                    style={{ backgroundColor: colorEstadoPedido(el.estado) }}
                     onClick={() => handlePedido(el.id, el, "completado")}
                   >
                     finalizar pedido
@@ -131,9 +147,10 @@ const Pedido = () => {
                 <div className="contenedor_boton">
                   <button
                     className="boton_comensar"
+                    style={{ backgroundColor:colorEstadoPedido(el.estado) }}
                     onClick={() => handlePedido(el.id, el, "entregado")}
                   >
-                    Pedido entregado
+                    Entregar pedido
                   </button>
                 </div>
               )}
