@@ -11,19 +11,27 @@
 @import "./Thanks.scss";
 
 @font-face {
-    font-family: "OakesGroteskBold";   /*Can be any text*/
-    src: local("OakesGroteskBold"),
-      url("../fonts/OakesGroteskBold/OakesGroteskBold.ttf") format("truetype");
-  }
+  font-family: "OakesGroteskBold"; /*Can be any text*/
+  src: local("OakesGroteskBold"),
+    url("../fonts/OakesGroteskBold/OakesGroteskBold.ttf") format("truetype");
+}
 
-  @font-face {
-    font-family: "OakesGroteskLight";   /*Can be any text*/
-    src: local("OakesGroteskLight"),
-      url("../fonts/OakesGroteskLight/OakesGroteskLight.ttf") format("truetype");
-  }
+@font-face {
+  font-family: "OakesGroteskLight"; /*Can be any text*/
+  src: local("OakesGroteskLight"),
+    url("../fonts/OakesGroteskLight/OakesGroteskLight.ttf") format("truetype");
+}
 
-  @font-face {
-    font-family: "SackersGothicStdHeavy";   /*Can be any text*/
-    src: local("SackersGothicStdHeavy"),
-      url("../fonts/SackersGothicStdHeavy/SackersGothicStdHeavy.ttf") format("truetype");
-  }
+@font-face {
+  font-family: "SackersGothicStdHeavy"; /*Can be any text*/
+  src: local("SackersGothicStdHeavy"),
+    url("../fonts/SackersGothicStdHeavy/SackersGothicStdHeavy.ttf")
+      format("truetype");
+}
+
+.contenedor_logoLeche {
+  position: absolute;
+  width: 18vw;
+  bottom: 25px;
+  right: 31px;
+}

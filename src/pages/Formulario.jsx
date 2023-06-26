@@ -140,14 +140,6 @@ const Formulario = () => {
           >
             <OpcionOneCardHome />
           </motion.div>
-          <motion.div
-            className="decoracion_cabezera"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ back: "backIn", duration: 0.5 }}
-          >
-            <CabezeraFormulario />
-          </motion.div>
         </div>
         <div className="contenido_formulario">
           <motion.h5
@@ -192,9 +184,6 @@ const Formulario = () => {
             />
             <input type="submit" value="enviar" />
           </motion.form>
-        </div>
-        <div className="decoracion_foot">
-          <FootFormulario />
         </div>
       </div>
       <Modal

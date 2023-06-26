@@ -21,7 +21,7 @@ const CabezeraInterfaz = ({producto}) => {
           <div onClick={() => navigate("/", { replace: true })}>
             <BotonHome />
           </div>
-          <p style={{color: producto=="Griego" ? "#fff" : "#001D85"}}>Volver al inicio</p>
+          <p style={{color: producto=="Griego" ? "#001D85" : "#001D85"}}>Volver al inicio</p>
         </motion.div>
         <motion.div
           className="contenedor_logos"
@@ -37,13 +37,11 @@ const CabezeraInterfaz = ({producto}) => {
           )}
           {producto == "LecheBlanca" && (
             <>
-              <LogoLeche />
               <OpcionOneCardHome />
             </>
           )}
           {producto == "BebidadeAlmendras" && (
             <>
-              <LogoAlmendras />
               <OpcionTwoCardHome />
             </>
           )}

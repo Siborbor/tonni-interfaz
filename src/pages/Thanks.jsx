@@ -9,15 +9,15 @@ import LogotonniWhite from "../svg components/LogotonniWhite";
 const Thanks = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const tiempoEspera = 5500;
-    const ejecutarDespuesDeTiempo = () => {
-      navigate("/", { replace: true });
-    };
-    const timeoutId = setTimeout(ejecutarDespuesDeTiempo, tiempoEspera);
-    //Limpia el timeout cuando el componente se desmonte
-    return () => clearTimeout(timeoutId);
-  }, []); //
+   useEffect(() => {
+     const tiempoEspera = 5500;
+     const ejecutarDespuesDeTiempo = () => {
+       navigate("/", { replace: true });
+     };
+     const timeoutId = setTimeout(ejecutarDespuesDeTiempo, tiempoEspera);
+     //Limpia el timeout cuando el componente se desmonte
+     return () => clearTimeout(timeoutId);
+   }, []); 
 
   return (
     <>
@@ -32,7 +32,6 @@ const Thanks = () => {
           <div className="logoTonniWhite">
             <LogotonniWhite />
           </div>
-          <TopBannerHome color="white" />
         </motion.div>
         <motion.div
           className="contenedor_frase"
@@ -59,29 +58,29 @@ const Thanks = () => {
         >
           <img src="/src/assets/chispa1.png" alt="" />
         </motion.div>
-        <motion.div
+        {/* <motion.div
           className="flotante contenedor_deco3"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
         >
           <img src="/src/assets/almendra1.png" alt="" />
-        </motion.div>
-        <motion.div
+        </motion.div> */}
+        {/* <motion.div
           className="floating flotante contenedor_deco4"
           initial={{ y: 150, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ back: "backIn", duration: 0.5, delay: 1}}
         >
           <img src="/src/assets/arandano.png" alt="" />
-        </motion.div>
+        </motion.div> */}
         <motion.div
-          className="flotante contenedor_deco5"
+          className="floating flotante contenedor_deco5"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
         >
-          <img src="/src/assets/bananadeco.png" alt="" />
+          <img src="/src/assets/frutilladeco.png" alt="" />
         </motion.div>
         <motion.div
           className="floating flotante contenedor_deco6"
@@ -92,21 +91,12 @@ const Thanks = () => {
           <img src="/src/assets/chispa2.png" alt="" />
         </motion.div>
         <motion.div
-          className="flotante contenedor_deco7"
+          className="floating flotante contenedor_deco7"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
         >
           <img src="/src/assets/almendra2.png" alt="" />
-        </motion.div>
-        <motion.div
-          className="contenedor_imgbotton_home"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 20, opacity: 1 }}
-          transition={{ back: "backIn", duration: 0.5 }}
-          exit={{ y: -100, opacity: 0 }}
-        >
-          <BottomBannerHome />
         </motion.div>
       </div>
     </>

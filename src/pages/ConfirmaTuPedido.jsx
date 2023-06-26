@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import BotonAtras from "../components/BotonAtrasComponent";
 import { motion } from "framer-motion";
+import { LogoLeche } from "../components/LogoLeche";
 
 const ConfirmaTuPedido = () => {
   const location = useLocation();
@@ -178,6 +179,7 @@ const ConfirmaTuPedido = () => {
           confirmar
         </motion.div>
         <BotonAtras color={"white"} colorcirculo={"#ffffff4e"} />
+        <LogoLeche/>
       </div>
     </>
   );

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import BotonAtras from "../components/BotonAtrasComponent";
 import { motion } from "framer-motion";
+import LogoAlmendras from "../svg components/LogoAlmendras";
+import EtiquetaAlmendra from "../svg components/EtiquetaAlmendra";
 
 const ConfirmaTuPedidoSemilla = () => {
   const location = useLocation();
@@ -58,6 +60,25 @@ const ConfirmaTuPedidoSemilla = () => {
         }}
       >
         <CabezeraInterfaz producto={producto} />
+        <div className="contenedor_logo_almendra">
+          <></>
+          <motion.div
+            className="logo"
+            initial={{ y: -50,x:"50%", opacity: 0 }}
+            animate={{ y: 0, x:"50%", opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
+          >
+            <LogoAlmendras />
+          </motion.div>
+          <motion.div
+            className="etiqueta"
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
+          >
+            <EtiquetaAlmendra />{" "}
+          </motion.div>
+        </div>
         <motion.div
           className="title"
           initial={{ y: -50, opacity: 0 }}

@@ -43,10 +43,11 @@
 
 .contenedor_deco5 {
   top: 62vh;
-  right: -2vw;
+  right: 11vw;
   z-index: 9999;
   img {
-    width: 50vw;
+    width: 25vw;
+    transform: scaleX(-1);
   }
 }
 
@@ -56,6 +57,7 @@
   z-index: 9999;
   img {
     width: 14vw;
+
   }
 }
 

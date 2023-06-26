@@ -30,7 +30,6 @@ const EscojeTuSaborGriego = () => {
     return color;
   };
 
-
   useEffect(() => {
     setTipo(location.state.tipo);
     setProducto(location.state.producto);
@@ -64,7 +63,8 @@ const EscojeTuSaborGriego = () => {
       <div
         className={`contenedor_Escojetusabor`}
         style={{
-          backgroundImage: `url(/src/assets/backgroundGriego.jpg)`}}
+          backgroundImage: `url(/src/assets/backgroundLeche.jpg)`,
+        }}
       >
         <CabezeraInterfaz producto={producto} />
         <div className="contenedor_texto">
@@ -74,10 +74,8 @@ const EscojeTuSaborGriego = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.5 }}
           >
-            <NumeroDos color={selectColor(producto)} colornumero={producto=="Griego"?"#001D85": "#fff"} />
-            <p style={{ color: selectColor(producto) }}>
-              Escoge tu sabor preferido
-            </p>
+            <NumeroDos color={"#001D85"} colornumero={"#fff"} />
+            <p style={{ color: "#001D85" }}>Escoge tu sabor preferido</p>
           </motion.div>
           <motion.div
             div
@@ -86,7 +84,9 @@ const EscojeTuSaborGriego = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
-            <p style={{color: producto=="Griego"?"#fff":"#757677"}}>(Elige solo 1)</p>
+            <p style={{ color: "#757677" }}>
+              (Elige solo 1)
+            </p>
           </motion.div>
         </div>
         <motion.div
@@ -102,7 +102,13 @@ const EscojeTuSaborGriego = () => {
               onClick={() => handleClick(tipo, producto, el.title)}
             >
               <img src={el.imagen} />
-              <p style={{color: producto=="BebidadeAlmendras"?"#7B6953":"white" }}>{el.title}</p>
+              <p
+                style={{
+                  color: producto == "BebidadeAlmendras" ? "#7B6953" : "white",
+                }}
+              >
+                {el.title}
+              </p>
             </div>
           ))}
         </motion.div>

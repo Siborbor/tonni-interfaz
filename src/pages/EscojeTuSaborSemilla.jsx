@@ -5,6 +5,8 @@ import BotonAtras from "../components/BotonAtrasComponent";
 import NumeroDos from "../svg components/Numerodos";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import dataproductos from "../data/productos";
+import LogoAlmendras from "../svg components/LogoAlmendras";
+import EtiquetaAlmendra from "../svg components/EtiquetaAlmendra";
 
 const EscojeTuSaborSemilla = () => {
   const location = useLocation();
@@ -30,7 +32,6 @@ const EscojeTuSaborSemilla = () => {
     return color;
   };
 
-
   useEffect(() => {
     setTipo(location.state.tipo);
     setProducto(location.state.producto);
@@ -54,9 +55,9 @@ const EscojeTuSaborSemilla = () => {
   }, [comboProductos, producto]);
 
   const handleClick = (tipo, producto, sabor) => {
-      navigate("/toni/EscojeTuEndulsantesemilla", {
-        state: { tipo: tipo, producto: producto, sabor: sabor },
-      });
+    navigate("/toni/EscojeTuEndulsantesemilla", {
+      state: { tipo: tipo, producto: producto, sabor: sabor },
+    });
   };
 
   return (
@@ -64,9 +65,29 @@ const EscojeTuSaborSemilla = () => {
       <div
         className={`contenedor_Escojetusabor`}
         style={{
-          backgroundImage: `url(/src/assets/backgroundSemillas.png)`}}
+          backgroundImage: `url(/src/assets/backgroundSemillas.png)`,
+        }}
       >
         <CabezeraInterfaz producto={producto} />
+        <div className="contenedor_logo_almendra">
+          <></>
+          <motion.div
+            className="logo"
+            initial={{ y: -50,x:"50%", opacity: 0 }}
+            animate={{ y: 0,x:"50%", opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
+          >
+            <LogoAlmendras />
+          </motion.div>
+          <motion.div
+            className="etiqueta"
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
+          >
+            <EtiquetaAlmendra />{" "}
+          </motion.div>
+        </div>
         <div className="contenedor_texto">
           <motion.div
             className="numero_titulo"
@@ -74,7 +95,10 @@ const EscojeTuSaborSemilla = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.5 }}
           >
-            <NumeroDos color={selectColor(producto)} colornumero={producto=="Griego"?"#001D85": "#fff"} />
+            <NumeroDos
+              color={selectColor(producto)}
+              colornumero={producto == "Griego" ? "#001D85" : "#fff"}
+            />
             <p style={{ color: selectColor(producto) }}>
               Escoge tu sabor preferido
             </p>
@@ -86,7 +110,9 @@ const EscojeTuSaborSemilla = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
-            <p style={{color: producto=="Griego"?"#fff":"#757677"}}>(Elige solo 1)</p>
+            <p style={{ color: producto == "Griego" ? "#fff" : "#757677" }}>
+              (Elige solo 1)
+            </p>
           </motion.div>
         </div>
         <motion.div
@@ -102,7 +128,13 @@ const EscojeTuSaborSemilla = () => {
               onClick={() => handleClick(tipo, producto, el.title)}
             >
               <img src={el.imagen} />
-              <p style={{color: producto=="BebidadeAlmendras"?"#7B6953":"white" }}>{el.title}</p>
+              <p
+                style={{
+                  color: producto == "BebidadeAlmendras" ? "#7B6953" : "white",
+                }}
+              >
+                {el.title}
+              </p>
             </div>
           ))}
         </motion.div>

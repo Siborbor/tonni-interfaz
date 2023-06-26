@@ -4,6 +4,8 @@ import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import BotonAtras from "../components/BotonAtrasComponent";
 import Botonsiguiente from "../svg components/BotonSiguiente";
 import { motion } from "framer-motion";
+import LogoAlmendras from "../svg components/LogoAlmendras";
+import EtiquetaAlmendra from "../svg components/EtiquetaAlmendra";
 
 const EscojeTuEndulsanteSemilla = () => {
   const location = useLocation();
@@ -22,20 +24,18 @@ const EscojeTuEndulsanteSemilla = () => {
     setTiposabor(location.state.tipoSabor);
   }, []);
 
-
   const handleClick = (tipo, producto, sabor, endulsante, tipoSabor) => {
-   if(endulsante.length>0){
-    navigate("/toni/confirmatuPedidoSemilla", {
-      state: {
-        tipo: tipo,
-        producto: producto,
-        sabor: sabor,
-        tipoSabor: tipoSabor,
-        endulsante: endulsante,
-      },
-    });
-   }
-    
+    if (endulsante.length > 0) {
+      navigate("/toni/confirmatuPedidoSemilla", {
+        state: {
+          tipo: tipo,
+          producto: producto,
+          sabor: sabor,
+          tipoSabor: tipoSabor,
+          endulsante: endulsante,
+        },
+      });
+    }
   };
 
   return (
@@ -43,10 +43,29 @@ const EscojeTuEndulsanteSemilla = () => {
       <div
         className="contenedor_escojeTuEndulsante"
         style={{
-          backgroundImage:`url('/src/assets/backgroundSemillas.png')`,
+          backgroundImage: `url('/src/assets/backgroundSemillas.png')`,
         }}
       >
         <CabezeraInterfaz producto={producto} />
+        <div className="contenedor_logo_almendra">
+          <></>
+          <motion.div
+            className="logo"
+            initial={{ y: -50,x:"50%", opacity: 0 }}
+            animate={{ y: 0,x:"50%", opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
+          >
+            <LogoAlmendras />
+          </motion.div>
+          <motion.div
+            className="etiqueta"
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
+          >
+            <EtiquetaAlmendra />{" "}
+          </motion.div>
+        </div>
         <div className="contenedor-selects">
           <motion.div
             className={`select_${producto}`}
@@ -57,15 +76,11 @@ const EscojeTuEndulsanteSemilla = () => {
             <input
               type="radio"
               name="endulsante"
-              id="endulzante artificial"
-              value="endulzante artificial"
+              id="azúcar"
+              value="azúcar"
               onChange={(e) => setEndulsante(e.target.value)}
             />
-            <label htmlFor="endulsante artificial">
-              endulzante
-              <br />
-              artificial
-            </label>
+            <label htmlFor="azúcar">azúcar</label>
           </motion.div>
           <motion.div
             className={`select_${producto}`}
@@ -76,15 +91,11 @@ const EscojeTuEndulsanteSemilla = () => {
             <input
               type="radio"
               name="endulsante"
-              id="endulzante natural"
-              value="endulzante natural"
+              id="stevia"
+              value="stevia"
               onChange={(e) => setEndulsante(e.target.value)}
             />
-            <label htmlFor="endulzante natural">
-              endulzante
-              <br />
-              natural
-            </label>
+            <label htmlFor="stevia">stevia</label>
           </motion.div>
           <motion.div
             className={`select_${producto}`}

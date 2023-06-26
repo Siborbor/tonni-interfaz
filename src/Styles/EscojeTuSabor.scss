@@ -9,6 +9,26 @@
   background-position: bottom;
   background-repeat: no-repeat;
   flex-direction: column;
+  .contenedor_logo_almendra {
+    position: absolute;
+    top: 16vh;
+    width: 100vw;
+    display: flex;
+    top: 16vh;
+    .logo {
+      width: 35vw;
+      position: absolute;
+      right: 50%;
+      transform: translate(50%);
+    }
+    .etiqueta {
+      width: 12vw;
+      width: 14vw;
+      position: absolute;
+      right: -3px;
+      top: -10px;
+    }
+  }
   .contenedor_texto {
     justify-content: center;
     display: flex;
@@ -57,7 +77,7 @@
       justify-content: center;
       max-width: 28vw;
       text-align: center;
-      
+
       img {
         width: 25vw;
         transition: 300ms;

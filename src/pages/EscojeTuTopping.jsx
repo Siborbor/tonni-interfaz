@@ -69,7 +69,7 @@ const EscojeTuTopping = () => {
       <div
         className={`contenedor_Escojetusabor`}
         style={{
-          backgroundImage: `url(/src/assets/backgroundGriego.jpg)`,
+          backgroundImage: `url(/src/assets/backgroundLeche.jpg)`,
         }}
       >
         <CabezeraInterfaz producto={producto} />
@@ -81,10 +81,10 @@ const EscojeTuTopping = () => {
             transition={{ back: "backIn", duration: 0.5, delay: 0.5 }}
           >
             <NumeroTres
-              color={selectColor(producto)}
-              colornumero={producto == "Griego" ? "#001D85" : "#fff"}
+              color={"#001D85"}
+              colornumero={"#fff"}
             />
-            <p style={{ color: selectColor(producto) }}>Escoge tus toppings</p>
+            <p style={{ color: "#001D85"}}>Escoge tus toppings</p>
           </motion.div>
           <motion.div
             div
@@ -93,7 +93,7 @@ const EscojeTuTopping = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
-            <p style={{ color: producto == "Griego" ? "#fff" : "#757677" }}>
+            <p style={{ color: "#757677"}}>
               (elige mínimo 1, máximo 2)
             </p>
           </motion.div>

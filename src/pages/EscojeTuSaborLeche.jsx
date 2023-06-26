@@ -5,6 +5,8 @@ import BotonAtras from "../components/BotonAtrasComponent";
 import NumeroDos from "../svg components/Numerodos";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import dataproductos from "../data/productos";
+import { LogoLeche } from "../components/LogoLeche";
+
 
 const EscojeTuSaborLeche = () => {
   const location = useLocation();
@@ -109,6 +111,7 @@ const EscojeTuSaborLeche = () => {
           ))}
         </motion.div>
         <BotonAtras color={"white"} colorcirculo={"#ffffff4e"} />
+         <LogoLeche/>
       </div>
     </div>
   );

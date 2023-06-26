@@ -23,7 +23,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="contenedor_home">
-        <motion.div
+        {/* <motion.div
           className="contenedor_imgTop_home"
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: -20, opacity: 1 }}
@@ -31,12 +31,12 @@ const Dashboard = () => {
           exit={{ y: -100, opacity: 0 }}
         >
           <TopBannerHome />
-        </motion.div>
+        </motion.div> */}
         <div className="contenedor_TextoBotones_home">
           <motion.h5
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ circ: "circIn", duration: 0.5, delay: 0.4 }}
+            transition={{ circ: "circIn", duration: 0.5, delay: 0.2}}
             exit={{ y: -100, opacity: 0 }}
           >
             ¡Escoge una opción para empezar!
@@ -47,7 +47,7 @@ const Dashboard = () => {
               onClick={() => pressButton("Original")}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ circ: "circIn", duration: 0.5, delay: 0.6 }}
+              transition={{ circ: "circIn", duration: 0.5, delay: 0.4}}
               exit={{ y: -100, opacity: 0 }}
             >
               <OpcionOneCardHome />
@@ -57,14 +57,14 @@ const Dashboard = () => {
               onClick={() => pressButton("Semillas")}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ circ: "circIn", duration: 0.5, delay: 0.7 }}
+              transition={{ circ: "circIn", duration: 0.5, delay: 0.5 }}
               exit={{ y: -100, opacity: 0 }}
             >
               <OpcionTwoCardHome />
             </motion.div>
           </div>
         </div>
-        <motion.div
+        {/* <motion.div
           className="contenedor_imgbotton_home"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 20, opacity: 1 }}
@@ -72,7 +72,7 @@ const Dashboard = () => {
           exit={{ y: -100, opacity: 0 }}
         >
           <BottomBannerHome />
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );

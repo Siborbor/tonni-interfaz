@@ -40,7 +40,7 @@ const ConfirmaTuPedidoGriego = () => {
       <div
         className={`contenedor_confirmatupedido`}
         style={{
-          backgroundImage: `url('/src/assets/backgroundGriego.jpg')`,
+          backgroundImage: `url('/src/assets/backgroundLeche.jpg')`,
         }}
       >
         <CabezeraInterfaz producto={producto} />
@@ -52,7 +52,7 @@ const ConfirmaTuPedidoGriego = () => {
         >
           <p
             style={{
-              color: "#fff",
+              color: "#001D85",
             }}
           >
             Por favor, confírmanos
@@ -71,6 +71,7 @@ const ConfirmaTuPedidoGriego = () => {
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
+              style={{color: "#001D85"}}
             >
               Producto
             </motion.h5>
@@ -86,6 +87,7 @@ const ConfirmaTuPedidoGriego = () => {
               transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
               style={{
                 color: "white",
+                minHeight: "45px",
               }}
             >
               {sabor}
@@ -105,6 +107,7 @@ const ConfirmaTuPedidoGriego = () => {
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
+              style={{color: "#001D85"}}
             >
               Toppings
             </motion.h5>
@@ -123,6 +126,7 @@ const ConfirmaTuPedidoGriego = () => {
                     transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
                     style={{
                       color: "white",
+                      minHeight: "45px",
                     }}
                   >
                     {el}

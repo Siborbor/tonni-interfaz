@@ -25,5 +25,8 @@
     align-items: center;
     justify-content: end;
     gap: 20px;
+    svg{
+      max-width: 20vw;
+    }
   }
 }

@@ -10,6 +10,27 @@
   background-position: bottom;
   background-repeat: no-repeat;
   flex-direction: column;
+  .contenedor_logo_almendra {
+    position: absolute;
+    top: 16vh;
+    width: 100vw;
+    display: flex;
+    top: 16vh;
+    .logo {
+      width: 35vw;
+      position: absolute;
+      right: 50%;
+      transform: translate(50%);
+    }
+    .etiqueta {
+      width: 12vw;
+      width: 14vw;
+      position: absolute;
+      right: -3px;
+      top: -10px;
+    }
+  }
+
   .contenedor-selects {
     gap: 30px;
     display: flex;
@@ -62,7 +83,7 @@
       }
     }
 
-    .select_BebidadeAlmendras{
+    .select_BebidadeAlmendras {
       input[type="radio"] {
         color: $verde;
         border: 5px solid $verde;

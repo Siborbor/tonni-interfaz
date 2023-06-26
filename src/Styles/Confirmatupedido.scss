@@ -11,6 +11,26 @@
   background-repeat: no-repeat;
   flex-direction: column;
   overflow: hidden;
+  .contenedor_logo_almendra {
+    position: absolute;
+    top: 16vh;
+    width: 100vw;
+    display: flex;
+    top: 16vh;
+    .logo {
+      width: 35vw;
+      position: absolute;
+      right: 50%;
+      transform: translate(50%);
+    }
+    .etiqueta {
+      width: 12vw;
+      width: 14vw;
+      position: absolute;
+      right: -3px;
+      top: -10px;
+    }
+  }
   .title {
     font-family: $bold;
     font-size: 6vw;
