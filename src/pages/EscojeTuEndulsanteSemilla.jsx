@@ -51,8 +51,8 @@ const EscojeTuEndulsanteSemilla = () => {
           <></>
           <motion.div
             className="logo"
-            initial={{ y: -50,x:"50%", opacity: 0 }}
-            animate={{ y: 0,x:"50%", opacity: 1 }}
+            initial={{ y: -50, x: "50%", opacity: 0 }}
+            animate={{ y: 0, x: "50%", opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.3 }}
           >
             <LogoAlmendras />
@@ -68,7 +68,11 @@ const EscojeTuEndulsanteSemilla = () => {
         </div>
         <div className="contenedor-selects">
           <motion.div
-            className={`select_${producto}`}
+            className={`select_${
+              producto == "Bebida de Almendras"
+                ? "BebidadeAlmendras"
+                : "LecheBlanca"
+            }`}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: -10, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.4 }}
@@ -83,7 +87,11 @@ const EscojeTuEndulsanteSemilla = () => {
             <label htmlFor="azúcar">azúcar</label>
           </motion.div>
           <motion.div
-            className={`select_${producto}`}
+            className={`select_${
+              producto == "Bebida de Almendras"
+                ? "BebidadeAlmendras"
+                : "LecheBlanca"
+            }`}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: -10, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.6 }}
@@ -98,7 +106,11 @@ const EscojeTuEndulsanteSemilla = () => {
             <label htmlFor="stevia">stevia</label>
           </motion.div>
           <motion.div
-            className={`select_${producto}`}
+            className={`select_${
+              producto == "Bebida de Almendras"
+                ? "BebidadeAlmendras"
+                : "LecheBlanca"
+            }`}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: -10, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
@@ -125,7 +137,9 @@ const EscojeTuEndulsanteSemilla = () => {
             right: "80%",
           }}
         >
-          <BotonAtras color={producto == "LecheBlanca" ? "white" : "#757677"} />
+          <BotonAtras
+            color={producto == "Leche Blanca" ? "white" : "#757677"}
+          />
         </div>
         <motion.div
           className="boton_siguiente"
@@ -143,7 +157,7 @@ const EscojeTuEndulsanteSemilla = () => {
           transition={{ back: "backIn", duration: 0.5 }}
         >
           <Botonsiguiente
-            color={producto == "LecheBlanca" ? "white" : "#757677"}
+            color={producto == "Leche Blanca" ? "white" : "#757677"}
           />
         </motion.div>
       </div>

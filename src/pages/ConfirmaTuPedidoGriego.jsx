@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import BotonAtras from "../components/BotonAtrasComponent";
 import { motion } from "framer-motion";
+import { LogoLeche } from "../components/LogoLeche";
 
 const ConfirmaTuPedidoGriego = () => {
   const location = useLocation();
@@ -73,7 +74,7 @@ const ConfirmaTuPedidoGriego = () => {
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
               style={{color: "#001D85"}}
             >
-              Producto
+              producto
             </motion.h5>
             <motion.img
               initial={{ y: -50, opacity: 0 }}
@@ -109,7 +110,7 @@ const ConfirmaTuPedidoGriego = () => {
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
               style={{color: "#001D85"}}
             >
-              Toppings
+              toppings
             </motion.h5>
             <div className="wrapper_toppings" style={{display: toppings.length <2  ? "flex": "grid"}}>
               {toppings.map((el, key) => (
@@ -149,7 +150,8 @@ const ConfirmaTuPedidoGriego = () => {
         >
           confirmar
         </motion.div>
-        <BotonAtras color={"white"} />
+        <BotonAtras color={"white"} colorcirculo={"#ffffff4e"}/>
+        <LogoLeche/>
       </div>
     </>
   );

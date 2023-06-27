@@ -5,6 +5,7 @@ import BotonAtras from "../components/BotonAtrasComponent";
 import NumeroDos from "../svg components/Numerodos";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import dataproductos from "../data/productos";
+import { LogoLeche } from "../components/LogoLeche";
 
 const EscojeTuSaborGriego = () => {
   const location = useLocation();
@@ -85,7 +86,7 @@ const EscojeTuSaborGriego = () => {
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
             <p style={{ color: "#757677" }}>
-              (Elige solo 1)
+              (elige solo 1)
             </p>
           </motion.div>
         </div>
@@ -112,7 +113,8 @@ const EscojeTuSaborGriego = () => {
             </div>
           ))}
         </motion.div>
-        <BotonAtras color={"white"} />
+        <BotonAtras color={"white"} colorcirculo={"#ffffff4e"}/>
+        <LogoLeche/>
       </div>
     </div>
   );

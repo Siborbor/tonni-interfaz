@@ -35,12 +35,12 @@ const CabezeraInterfaz = ({producto}) => {
               <OpcionOneCardHome />
             </>
           )}
-          {producto == "LecheBlanca" && (
+          {producto == "Leche Blanca" && (
             <>
               <OpcionOneCardHome />
             </>
           )}
-          {producto == "BebidadeAlmendras" && (
+          {producto == "Bebida de Almendras" && (
             <>
               <OpcionTwoCardHome />
             </>

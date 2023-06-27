@@ -19,7 +19,7 @@ const EscojeTuSaborSemilla = () => {
 
   const selectColor = (producto) => {
     let color;
-    if (producto == "BebidadeAlmendras") {
+    if (producto == "Bebida de Almendras") {
       color = "#5C7C38";
     }
     if (producto == "LecheBlanca") {
@@ -46,7 +46,7 @@ const EscojeTuSaborSemilla = () => {
       if (producto == "LecheBlanca") {
         setSabores(dataproductos.LecheBlanca.sabor);
       }
-      if (producto == "BebidadeAlmendras") {
+      if (producto == "Bebida de Almendras") {
         setSabores(dataproductos.BebidadeAlmendras.sabor);
       }
     };
@@ -111,7 +111,7 @@ const EscojeTuSaborSemilla = () => {
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
             <p style={{ color: producto == "Griego" ? "#fff" : "#757677" }}>
-              (Elige solo 1)
+              (elige solo 1)
             </p>
           </motion.div>
         </div>
@@ -130,7 +130,7 @@ const EscojeTuSaborSemilla = () => {
               <img src={el.imagen} />
               <p
                 style={{
-                  color: producto == "BebidadeAlmendras" ? "#7B6953" : "white",
+                  color: producto == "Bebida de Almendras" ? "#7B6953" : "white",
                 }}
               >
                 {el.title}

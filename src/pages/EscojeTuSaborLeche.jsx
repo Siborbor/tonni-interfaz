@@ -23,7 +23,7 @@ const EscojeTuSaborLeche = () => {
     if (producto == "BebidadeAlmendras") {
       color = "#5C7C38";
     }
-    if (producto == "LecheBlanca") {
+    if (producto == "Leche Blanca") {
       color = "#001D85";
     }
     if (producto == "Griego") {
@@ -46,11 +46,8 @@ const EscojeTuSaborLeche = () => {
       if (producto == "Griego") {
         setSabores(dataproductos.Griego.sabor);
       }
-      if (producto == "LecheBlanca") {
+      if (producto == "Leche Blanca") {
         setSabores(dataproductos.LecheBlanca.sabor);
-      }
-      if (producto == "BebidadeAlmendras") {
-        setSabores(dataproductos.BebidadeAlmendras.sabor);
       }
     };
 
@@ -80,7 +77,7 @@ const EscojeTuSaborLeche = () => {
           >
             <NumeroDos color={selectColor(producto)} colornumero={producto=="Griego"?"#001D85": "#fff"} />
             <p style={{ color: selectColor(producto) }}>
-              Escoge tu sabor preferido
+            Escoge tu tipo de leche preferida
             </p>
           </motion.div>
           <motion.div
@@ -90,7 +87,7 @@ const EscojeTuSaborLeche = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
-            <p style={{color: "#757677"}}>(Elige solo 1)</p>
+            <p style={{color: "#757677"}}>(elige solo 1)</p>
           </motion.div>
         </div>
         <motion.div

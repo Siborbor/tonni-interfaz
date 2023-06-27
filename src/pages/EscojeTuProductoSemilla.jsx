@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import { useLocation,  useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import TopBannerEscojeTuProducto from "../svg components/TopBannerEscojeTuProducto";
 import { motion } from "framer-motion";
 import OpcionTwoCardHome from "../svg components/OpcionTwoCardHome";
 import OpcionOneCardHome from "../svg components/OpcionOneCardHome";
 import Welcome from "../svg components/Welcome";
-import LetraEscojetuproducto from "../svg components/letraEscojetuproducto";
-import LetraSelecionatuproducto from "../svg components/LetraSelecionatuproducto";
 import ProductoGriego from "../svg components/ProductoGriego";
 import ProductoLecheblanca from "../svg components/ProductoLecheBlanca";
 import ProductoBebidaAlmendra from "../svg components/ProductoBebidaalmendra";
 import BotonAtras from "../components/BotonAtrasComponent";
+import NumeroOne from "../svg components/NumeroOne";
 
 const EscojeTuProductoSemilla = () => {
   //inicialisamos el estado con la props de tipo de leche
@@ -25,9 +24,13 @@ const EscojeTuProductoSemilla = () => {
   }, []);
 
   const pressProduct = (productoSelecionado, background) => {
-      navigate("/toni/EscojeTuSaborSemilla", {
-        state: { tipo: tonniTipo, producto: productoSelecionado, background:background },
-      });
+    navigate("/toni/EscojeTuSaborSemilla", {
+      state: {
+        tipo: tonniTipo,
+        producto: productoSelecionado,
+        background: background,
+      },
+    });
   };
 
   return (
@@ -35,7 +38,7 @@ const EscojeTuProductoSemilla = () => {
       <div
         className="contenedor_EscojeTuProducto"
         style={{
-          backgroundImage:`url(/src/assets/backgroundSemillas.png)`,
+          backgroundImage: `url(/src/assets/backgroundSemillas.png)`,
         }}
       >
         {/* contenedor que contiene la cabezera */}
@@ -69,11 +72,8 @@ const EscojeTuProductoSemilla = () => {
           animate={{ y: -10, opacity: 1 }}
           transition={{ back: "backIn", duration: 0.5, delay: 0.6 }}
         >
-          {tonniTipo == "Original" ? (
-            <LetraEscojetuproducto />
-          ) : (
-            <LetraSelecionatuproducto />
-          )}
+          <NumeroOne color={"#5C7C38"} />
+          <p style={{ color: "#5C7C38" }}>Selecciona tu preparación</p>
         </motion.div>
         {/* contenedor que contiene los Productos*/}
         <motion.div
@@ -83,21 +83,18 @@ const EscojeTuProductoSemilla = () => {
           animate={{ y: -10, opacity: 1 }}
           transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
         >
-          {tonniTipo == "Original" ? (
-            <>
-              <ProductoGriego onClick={() => pressProduct("Griego","/src/assets/backgroundGriego.jpg")} />
-              <ProductoLecheblanca
-                onClick={() => pressProduct("LecheBlanca","/src/assets/backgroundLeche.jpg")}
-              />
-            </>
-          ) : (
-            <ProductoBebidaAlmendra
-              onClick={() => pressProduct("BebidadeAlmendras", "/src/assets/backgroundSemillas.png")}
-            />
-          )}
+          <div
+            className="contenedor_preparado "
+            onClick={() => pressProduct("Bebida de Almendras")}
+          >
+            <img src="/src/assets/bebidadeAlmendras.png" />
+            <p style={{ color: "#7B6953" }}>
+              batido de fruta con bebida de almendras
+            </p>
+          </div>
         </motion.div>
         {/* contenedor que contiene el boton atras */}
-        <BotonAtras color={"#757677"}/>
+        <BotonAtras color={"#757677"} />
       </div>
     </>
   );

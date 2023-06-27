@@ -6,6 +6,7 @@ import NumeroTres from "../svg components/NumeroTres";
 import CabezeraInterfaz from "../components/CabezeraInterfaz";
 import dataproductos from "../data/productos";
 import Botonsiguiente from "../svg components/BotonSiguiente";
+import { LogoLeche } from "../components/LogoLeche";
 
 const EscojeTuTopping = () => {
   const location = useLocation();
@@ -57,7 +58,7 @@ const EscojeTuTopping = () => {
   };
 
   const handleClik = () => {
-    if(toppingSelect.length>0){
+    if (toppingSelect.length > 0) {
       navigate("/toni/confirmatuPedidoGriego", {
         state: { tipo, producto, sabor: sabores, toppings: toppingSelect },
       });
@@ -80,11 +81,8 @@ const EscojeTuTopping = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.5 }}
           >
-            <NumeroTres
-              color={"#001D85"}
-              colornumero={"#fff"}
-            />
-            <p style={{ color: "#001D85"}}>Escoge tus toppings</p>
+            <NumeroTres color={"#001D85"} colornumero={"#fff"} />
+            <p style={{ color: "#001D85" }}>Escoge tus toppings</p>
           </motion.div>
           <motion.div
             div
@@ -93,9 +91,7 @@ const EscojeTuTopping = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
           >
-            <p style={{ color: "#757677"}}>
-              (elige mínimo 1, máximo 2)
-            </p>
+            <p style={{ color: "#757677" }}>(elige mínimo 1, máximo 2)</p>
           </motion.div>
         </div>
         <motion.div
@@ -131,7 +127,7 @@ const EscojeTuTopping = () => {
             right: "80%",
           }}
         >
-          <BotonAtras color={"white"} />
+          <BotonAtras color={"white"} colorcirculo={"#ffffff4e"} />
         </div>
         <motion.div
           className="boton_siguiente"
@@ -140,16 +136,15 @@ const EscojeTuTopping = () => {
             display: "flex",
             position: "absolute",
             bottom: "30px",
-            right: "6%",
+            right: "30%",
           }}
           initial={{ y: 50, opacity: 0, x: "0px" }}
           animate={{ y: 0, opacity: 1, x: "0px" }}
           transition={{ back: "backIn", duration: 0.5 }}
         >
-          <Botonsiguiente
-            color={"white"}
-          />
+          <Botonsiguiente color={"white"} colorcirculo={"#ffffff4e"} />
         </motion.div>
+        <LogoLeche />
       </div>
     </div>
   );

@@ -58,7 +58,7 @@ const EscojeTuSaborTwoStep = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.7 }}
             >
-              <p style={{color:"#757677"}}>(Elige solo 1)</p>
+              <p style={{color:"#757677"}}>(elige solo 1)</p>
             </motion.div>
           </div>
           <motion.div

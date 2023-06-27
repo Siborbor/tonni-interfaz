@@ -17,17 +17,16 @@
     display: flex;
     top: 16vh;
     .logo {
-      width: 35vw;
+      width: 45vw;
       position: absolute;
       right: 50%;
       transform: translate(50%);
     }
     .etiqueta {
-      width: 12vw;
-      width: 14vw;
+      width: 20vw;
       position: absolute;
-      right: -3px;
-      top: -10px;
+      right: 0px;
+      top: -24px;
     }
   }
 

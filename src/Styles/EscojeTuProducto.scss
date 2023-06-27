@@ -1,3 +1,5 @@
+@import "./vars.scss";
+
 .contenedor_EscojeTuProducto {
   height: 100vh;
   width: 100vw;
@@ -22,12 +24,36 @@
     }
   }
   .letra_eligeproducto {
-    width: 70vw;
     margin: 30px auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    p{
+      font-family: $bold;
+      font-size: 6vw;
+    }
+    svg{
+      width: 7vw;
+    }
   }
   .contenedor_productos {
     width: 77vw;
     margin: 0px auto;
     display: flex;
+
+    .contenedor_preparado {
+      img {
+        width: 40vw;
+      }
+      p {
+        text-align: center;
+        font-family: $heavy;
+        color: $azul;
+        font-size: 3.5vw;
+        margin: 0px;
+        line-height: 0.8;
+      }
+    }
   }
 }
