@@ -19,8 +19,8 @@ const productos = {
         imagen: "/src/assets/frutillagriego.png",
       },
       {
-        title: "limón Coco",
-        imagen: "/src/assets/limón Cocogriego.png",
+        title: "limón coco",
+        imagen: "/src/assets/limón cocogriego.png",
       },
       {
         title: "mora",
