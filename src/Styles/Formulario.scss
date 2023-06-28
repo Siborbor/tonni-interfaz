@@ -19,7 +19,7 @@
     width: 100vw;
     right: 50%;
     transform: translate(50%);
-    
+
     .contenedor_botonHome {
       justify-content: center;
     }
@@ -48,7 +48,7 @@
     h6 {
       font-family: $heavy;
       color: $azul;
-      font-size: 2.5vw;
+      font-size: 3vw;
       margin: 0px;
       margin-bottom: 40px;
     }
@@ -60,7 +60,8 @@
         color: $azul;
         margin-bottom: 5px;
       }
-      input[type="text"],input[type="email"] {
+      input[type="text"],
+      input[type="email"] {
         border-radius: 100px;
         border: 1px solid #80633c;
         margin-bottom: 20px;
@@ -68,21 +69,20 @@
         font-family: $heavy;
         text-align: center;
       }
-      input[type="submit"]{
-        min-width: 27vw;
-        margin: 0px auto;
+      input[type="submit"] {
         background-color: $azul;
+        font-family: $heavy;
+        margin: 0px auto;
         color: white;
         border-radius: 100px;
-        padding: 10px 20px;
-        font-family: $heavy;
+        padding: 7px 11px;
         border: none;
+        font-size: 3.5vw;
       }
-      input:focus{
+      input:focus {
         outline: none;
         border: 1px solid $azul;
       }
-      
     }
   }
   .decoracion_foot {

@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import OpcionOneCardHome from "../svg components/OpcionOneCardHome";
-import CabezeraFormulario from "../svg components/CabezeraFormulario";
-import FootFormulario from "../svg components/FootFormulario";
 import Modal from "react-modal";
 
 let initial = { nombre: "", correo: "" };
@@ -23,7 +21,7 @@ const customStyles = {
     left: "50%",
     right: "auto",
     bottom: "auto",
-    marginRight: "-50%",
+    marginRight: "-30%",
     transform: "translate(-50%, -50%)",
     display: "flex",
     justifyContent: "center",
@@ -31,7 +29,7 @@ const customStyles = {
     flexDirection: "column",
     backgroundColor: "#001D85",
     borderRadius: "40px",
-    padding: "8vw"
+    padding: "8vw",
   },
 };
 
@@ -130,7 +128,7 @@ const Formulario = () => {
             <div onClick={() => navigate("/", { replace: true })}>
               <BotonHome />
             </div>
-            <p style={{ color: "white" }}>Volver al inicio</p>
+            <p style={{ color: "#001D85" }}>Volver al inicio</p>
           </motion.div>
           <motion.div
             className="contenedor_logos"
@@ -198,10 +196,11 @@ const Formulario = () => {
           style={{
             color: "white",
             fontFamily: "OakesGroteskBold",
-            fontSize: "4.5vw",
+            fontSize: "7vw",
+            textAlign:"center"
           }}
         >
-          Solo puedes pedir una vez!
+          Este correo ya ha sido registrado.
         </h2>
         <button
           onClick={closeModal}
@@ -211,10 +210,10 @@ const Formulario = () => {
             fontFamily: "SackersGothicStdHeavy",
             color: "#001D85",
             borderRadius: "100px",
-            padding: "8px 20px"
+            padding: "8px 20px",
           }}
         >
-          close
+          entendido
         </button>
       </Modal>
     </div>

@@ -25,10 +25,10 @@ const ConfirmaTuPedido = () => {
 
   const selectColor = (producto) => {
     let color;
-    if (producto == "BebidadeAlmendras") {
+    if (producto == "Bebida de Almendras") {
       color = "#5C7C38";
     }
-    if (producto == "LecheBlanca") {
+    if (producto == "Leche Blanca") {
       color = "#fff";
     }
     if (producto == "Griego") {
@@ -67,7 +67,7 @@ const ConfirmaTuPedido = () => {
         >
           <p
             style={{
-              color: producto == "BebidadeAlmendras" ? "#5C7C38" : "#001D85",
+              color: producto == "Bebida de Almendras" ? "#5C7C38" : "#001D85",
             }}
           >
             Por favor, confírmanos
@@ -78,7 +78,7 @@ const ConfirmaTuPedido = () => {
         <div
           className="contenedor_pedido"
           style={{
-            color: producto == "BebidadeAlmendras" ? "#7B6953" : "#001D85",
+            color: producto == "Bebida de Almendras" ? "#7B6953" : "#001D85",
           }}
         >
           <div className="contenedor_producto">
@@ -94,7 +94,7 @@ const ConfirmaTuPedido = () => {
               animate={{ y: -10, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
               src={`/src/assets/${
-                producto == "LecheBlanca" ? sabor : producto
+                producto == "Leche Blanca" ? sabor : producto
               }.png`}
             />
             <motion.p
@@ -102,10 +102,10 @@ const ConfirmaTuPedido = () => {
               animate={{ y: -10, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
               style={{
-                color: producto == "BebidadeAlmendras" ? "#7B6953" : "white",
+                color: producto == "Bebida de Almendras" ? "#7B6953" : "white",
               }}
             >
-              {producto == "LecheBlanca" ? sabor : "almendras"}
+              {producto == "Leche Blanca" ? sabor : "almendras"}
             </motion.p>
           </div>
           <div className="contenedor_mas">
@@ -130,7 +130,7 @@ const ConfirmaTuPedido = () => {
               animate={{ y: -10, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
               src={`/src/assets/${
-                producto == "LecheBlanca" ? tipoSabor : sabor
+                producto == "Leche Blanca" ? tipoSabor : sabor
               }.png`}
             />
             <motion.p
@@ -138,10 +138,10 @@ const ConfirmaTuPedido = () => {
               animate={{ y: -10, opacity: 1 }}
               transition={{ back: "backIn", duration: 0.5, delay: 0.9 }}
               style={{
-                color: producto == "BebidadeAlmendras" ? "#7B6953" : "white",
+                color: producto == "Bebida de Almendras" ? "#7B6953" : "white",
               }}
             >
-              {producto == "LecheBlanca" ? tipoSabor : sabor}
+              {producto == "Leche Blanca" ? tipoSabor : sabor}
             </motion.p>
           </div>
         </div>
@@ -152,12 +152,12 @@ const ConfirmaTuPedido = () => {
           transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
           style={{
             borderColor:
-              producto == "BebidadeAlmendras" ? "#5C7C38" : "#041689",
+              producto == "Bebida de Almendras" ? "#5C7C38" : "#041689",
           }}
         >
           <p
             style={{
-              color: producto == "BebidadeAlmendras" ? "#5C7C38" : "#041689",
+              color: producto == "Bebida de Almendras" ? "#5C7C38" : "#041689",
             }}
           >
             {endulsante}
@@ -170,7 +170,7 @@ const ConfirmaTuPedido = () => {
           className="boton_confirmar"
           style={{
             backgroundColor: selectColor(producto),
-            color: producto == "LecheBlanca" ? "#041689" : "#fff",
+            color: producto == "Leche Blanca" ? "#041689" : "#fff",
           }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: -10, opacity: 1 }}

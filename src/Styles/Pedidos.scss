@@ -17,17 +17,36 @@
       margin: -30px;
     }
   }
+  .contenedor_colores {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    margin-top: 6vw;
+    .colores{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      p{
+        margin: 0px;
+        font-family: $heavy;
+        font-size: 2vw;
+      }
+    }
+
+  }
   .contenedor_datosPedidos {
     display: flex;
     gap: 20px;
-    margin-top: 70px;
+    margin-top: 5vw;
     margin-bottom: 40px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     .pedido {
       width: 20vw;
-      height: 40vw;
+      height: 45vw;
       background-color: #d9dadb;
       border-radius: 20px;
       padding: 20px 30px;
@@ -35,12 +54,13 @@
       p {
         font-family: $heavy;
         font-size: 1.5vw;
+        text-transform: lowercase;
         strong {
           color: $azul;
         }
       }
 
-      .contenedor_boton{
+      .contenedor_boton {
         .boton_comensar {
           font-family: $bold;
           font-size: 1.5vw;
@@ -57,7 +77,6 @@
         justify-content: center;
         align-items: center;
       }
-
     }
   }
 }

@@ -5,11 +5,25 @@ const Pedido = () => {
   const apiUrl = "https://api.shaketonibar.111.com.ec/api/pedido";
 
   useEffect(() => {
+    function ordenarAsc(p_array_json, p_key) {
+      p_array_json.sort(function (a, b) {
+        return a[p_key] > b[p_key];
+      });
+    }
+
+    function ordenarDesc(p_array_json, p_key) {
+      ordenarAsc(p_array_json, p_key);
+      p_array_json.reverse();
+    }
+
     const fetchData = async () => {
       try {
         const response = await fetch(apiUrl);
         if (response.ok) {
           const newData = await response.json();
+          ordenarAsc(newData, "id");
+          ordenarDesc(newData, "id");
+          console.log(newData);
           setData(newData);
         }
       } catch (error) {
@@ -34,7 +48,7 @@ const Pedido = () => {
     } else if (estado == "completado") {
       return "#11189B";
     } else {
-      return "#55793F";
+      return "black";
     }
   };
 
@@ -83,35 +97,68 @@ const Pedido = () => {
         <div className="contenedor_titulo_pedidos">
           <p>Pedidos</p>
         </div>
+        <div className="contenedor_colores">
+          <div className="colores">
+            <div
+              style={{
+                width: "10px",
+                height: "10px",
+                backgroundColor: "#F2E2D1",
+              }}
+            ></div>
+            <p>batidos</p>
+          </div>
+          <div className="colores">
+            <div
+              style={{
+                width: "10px",
+                height: "10px",
+                backgroundColor: "#C7E3FE",
+              }}
+            ></div>
+            <p>yogurt con toppings</p>
+          </div>
+        </div>
         <div className="contenedor_datosPedidos">
           {data.map((el, index) => (
-            <div key={index} className="pedido">
+            <div
+              key={index}
+              className="pedido"
+              style={{
+                backgroundColor:
+                  el.producto == "Griego" ? "#C7E3FE" : "#F2E2D1",
+              }}
+            >
               <p style={{ fontSize: "1.8vw" }}>
                 <strong style={{ color: colorEstadoPedido(el.estado) }}>
-                  Estado: 
+                  estado:
                 </strong>
                 {el.estado}
               </p>
               <p>
-                <strong>Id Pedido:</strong> <br /> {el.id}
+                <strong>id pedido:</strong> <br /> {el.id}
               </p>
               <p>
-                <strong>Nombre:</strong> <br /> {el.user}
+                <strong>nombre:</strong> <br /> {el.user}
               </p>
               <p>
-                <strong>Producto:</strong> <br /> {el.producto}
+                <strong>producto:</strong> <br /> {el.producto}
               </p>
               <p>
-                <strong>Sabor:</strong> <br /> {el.sabor}
+                <strong>
+                  {el.producto == "Leche Blanca" ? "tipo de leche" : "sabor"}
+                </strong>{" "}
+                <br /> {el.sabor}
               </p>
-              {el.tipoSabor != undefined && (
+              {el.tiposabor != undefined && (
                 <p>
-                  <strong>Sabor 2:</strong> <br /> {el.tipoSabor}
+                  <strong>sabor:</strong>
+                  <br /> {el.tiposabor}
                 </p>
               )}
               {el.endulzante != undefined && (
                 <p>
-                  <strong>Endulsante:</strong> <br />
+                  <strong>endulzante:</strong> <br />
                   {el.endulzante}
                 </p>
               )}
@@ -139,7 +186,7 @@ const Pedido = () => {
                     style={{ backgroundColor: colorEstadoPedido(el.estado) }}
                     onClick={() => handlePedido(el.id, el, "completado")}
                   >
-                    finalizar pedido
+                    Finalizar pedido
                   </button>
                 </div>
               )}
@@ -147,7 +194,7 @@ const Pedido = () => {
                 <div className="contenedor_boton">
                   <button
                     className="boton_comensar"
-                    style={{ backgroundColor:colorEstadoPedido(el.estado) }}
+                    style={{ backgroundColor: colorEstadoPedido(el.estado) }}
                     onClick={() => handlePedido(el.id, el, "entregado")}
                   >
                     Entregar pedido
