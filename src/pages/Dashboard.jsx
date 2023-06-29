@@ -54,13 +54,14 @@ const Dashboard = () => {
             </motion.div>
             <motion.div
               className="tarjeta"
-              onClick={() => pressButton("Semillas")}
+              // onClick={() => pressButton("Semillas")}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ circ: "circIn", duration: 0.5, delay: 0.5 }}
               exit={{ y: -100, opacity: 0 }}
             >
               <OpcionTwoCardHome />
+              <p>¡Muy Pronto!</p>
             </motion.div>
           </div>
         </div>

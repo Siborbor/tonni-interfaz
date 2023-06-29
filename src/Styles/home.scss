@@ -31,11 +31,17 @@ body {
       .contenedor_tarjeta{
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 20px;
         .tarjeta{
             width: 30vw;
             height: auto;
+            p{
+              font-family: $heavy;
+              color: #7B6953;
+              font-size: 3.5vw;
+              text-align: center;
+            }
         }
       }
   }
