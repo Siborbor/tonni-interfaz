@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Producto.associate = (models) => {
+    Producto.belongsTo(models.Marca, {
+      foreignKey: "marcaId",
+      as: "marcas",
+    });
     Producto.hasMany(models.Topping, {
       foreignKey: "producto_id",
       as: "toppings",

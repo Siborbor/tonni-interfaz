@@ -30,6 +30,19 @@ const crearPedido = async (req, res) => {
       await PedidoTopping.bulkCreate(toppingsData);
     }
 
+    // Emitir evento en tiempo real
+    const io = req.app.get("io");
+    io.emit("nuevo-pedido", {
+      id: nuevoPedido.id,
+      user: req.user?.nombre || "Usuario",
+      producto_id,
+      sabor_id,
+      endulzante_id,
+      toppings,
+      estado: "pendiente",
+      creado_en: new Date(),
+    });
+
     res.status(201).json({ message: "Pedido creado correctamente" });
   } catch (error) {
     console.error("Error al crear pedido:", error);

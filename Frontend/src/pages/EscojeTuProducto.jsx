@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import OpcionTwoCardHome from "../svg components/OpcionTwoCardHome";
 import OpcionOneCardHome from "../svg components/OpcionOneCardHome";
 import Welcome from "../svg components/Welcome";
-import LetraEscojetuproducto from "../svg components/NumeroOne";
-import LetraSelecionatuproducto from "../svg components/LetraSelecionatuproducto";
 import ProductoGriego from "../svg components/ProductoGriego";
 import ProductoLecheblanca from "../svg components/ProductoLecheBlanca";
 import ProductoBebidaAlmendra from "../svg components/ProductoBebidaalmendra";
@@ -28,7 +26,7 @@ const EscojeTuProducto = () => {
   const pressProduct = (productoSelecionado) => {
     if (productoSelecionado == "Griego") {
       navigate("/toni/EscojeTuSaborGriego", {
-        state: { tipo: tonniTipo, producto: productoSelecionado },
+        state: { tipo: tonniTipo, producto: productoSelecionado, id: 1 },
       });
     } else {
       navigate("/toni/EscojeTuSaborLeche", {
@@ -49,7 +47,7 @@ const EscojeTuProducto = () => {
         >
           {/* contenedor que contiene el logo */}
           <motion.div className="logo_tonniEscojeProducto">
-            {tonniTipo == "Original" ? (
+            {tonniTipo == "original" ? (
               <OpcionOneCardHome />
             ) : (
               <OpcionTwoCardHome />
@@ -61,10 +59,10 @@ const EscojeTuProducto = () => {
           </motion.div>
           {/* contenedor que contiene la palabra el fondo de la cabezera, se renderiza el dolor dependiendo de el tipo de leche*/}
           <TopBannerEscojeTuProducto
-            color={tonniTipo == "Original" ? "#001D85" : "#5C7C38"}
+            color={tonniTipo == "original" ? "#001D85" : "#5C7C38"}
           />
         </motion.div>
-        {/* contenedor que contiene la frase escoje tu producto*/}
+  
         <motion.div
           className="letra_eligeproducto"
           initial={{ y: -50, opacity: 0 }}
@@ -77,12 +75,12 @@ const EscojeTuProducto = () => {
         {/* contenedor que contiene los Productos*/}
         <motion.div
           className="contenedor_productos"
-          style={{ width: tonniTipo == "Original" ? "77vw" : "40vw" }}
+          style={{ width: tonniTipo == "original" ? "77vw" : "40vw" }}
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: -10, opacity: 1 }}
           transition={{ back: "backIn", duration: 0.5, delay: 0.8 }}
         >
-          {tonniTipo == "Original" ? (
+          {tonniTipo == "original" ? (
             <>
                <ProductoGriego onClick={() => pressProduct("Griego")} />
               <ProductoLecheblanca

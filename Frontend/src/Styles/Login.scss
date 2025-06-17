@@ -1,0 +1,73 @@
+@import "./vars.scss";
+
+.login-page{
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  .contenedor_imgTop_home{
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    z-index: -1;
+  }
+  .contenedor_titulo_login {
+    text-align: center;
+    margin-bottom: 2rem;
+  
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $azul;
+      font-family: "OakesGroteskBold";
+    }
+  }
+  form {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px;
+      label {
+        font-family: $heavy;
+        color: $azul;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        border-radius: 100px;
+        border: 1px solid #80633c;
+        margin-bottom: 20px;
+        padding: 8px 14px;
+        font-family: $heavy;
+        text-align: center;
+      }
+      button {
+        background-color: $azul;
+        font-family: $heavy;
+        margin: 0px auto;
+        color: white;
+        border-radius: 100px;
+        padding: 7px 11px;
+        border: none;
+        font-size: 3.5vw;
+        width: 100%;
+      }
+      input:focus {
+        outline: none;
+        border: 1px solid $azul;
+      }
+    }
+    .link-registro {
+      color: $azul;
+      font-family: $heavy;
+      text-decoration: none;
+      font-size: 0.7rem;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+}

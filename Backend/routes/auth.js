@@ -66,12 +66,12 @@ router.post("/login", async (req, res) => {
 
     // Crear JWT
     const token = jwt.sign(
-      { id: usuario.id, nombre: usuario.nombre, correo: usuario.correo },
+      { id: usuario.id, nombre: usuario.nombre, correo: usuario.correo, rol: usuario.rol },
       JWT_SECRET,
       { expiresIn: "8h" }
     );
 
-    return res.json({ token, message: "Login exitoso." });
+    return res.json({ token, usuario: { nombre: usuario.nombre, rol: usuario.rol }, message: "Login exitoso." });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: "Error en el servidor." });

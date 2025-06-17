@@ -28,17 +28,31 @@ body {
         text-align: center;
         color: $azul;
         font-family: "OakesGroteskBold";
-        font-size: 6.5vw;
-        margin: 4vw 12vw;
+        font-size: 2rem;
+        margin: 0px;
+        padding: 0px;
+    }
+    h2{
+        text-align: center;
+        color: $azul;
+        font-family: "OakesGroteskBold";
+        font-size: 1rem;
+        margin: 0px;
+        padding: 0px;
     }
       .contenedor_tarjeta{
         display: flex;
         justify-content: center;
         align-items: start;
         gap: 20px;
-        .tarjeta{
+        margin-top: 20px;
+        .tarjeta_marca{
             width: 30vw;
             height: auto;
+            img{
+              width: 100%;
+              height: auto;
+            }
             p{
               font-family: $heavy;
               color: #7B6953;

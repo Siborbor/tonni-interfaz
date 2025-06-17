@@ -1,87 +1,169 @@
 import "./Styles/App.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./pages/Dashboard.jsx";
-import EscojeTuProducto from "./pages/EscojeTuProducto.jsx";
-import EscojeTuSaborLeche from "./pages/EscojeTuSaborLeche.jsx";
-import EscojeTuSaborTwoStep from "./pages/EscojeTuSaborTwoStep.jsx";
-import EscojeTuEndulsante from "./pages/EscojeTuEndulsante.jsx";
-import ConfirmaTuPedido from "./pages/ConfirmaTuPedido.jsx";
-import Formulario from "./pages/Formulario.jsx";
-import Thanks from "./pages/Thanks";
-import Pedido from "./pages/Pedido";
-import EscojeTuSaborGriego from "./pages/EscojeTuSaborGriego";
-import EscojeTuTopping from "./pages/EscojeTuTopping";
-import ConfirmaTuPedidoGriego from "./pages/ConfirmaTuPedidoGriego";
+
+// Páginas
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import EscojeTuProducto from "./pages/EscojeTuProducto";
 import EscojeTuProductoSemilla from "./pages/EscojeTuProductoSemilla";
 import EscojeTuSaborSemilla from "./pages/EscojeTuSaborSemilla";
+import EscojeTuSaborLeche from "./pages/EscojeTuSaborLeche";
+import EscojeTuSaborGriego from "./pages/EscojeTuSaborGriego";
+import EscojeTuTopping from "./pages/EscojeTuTopping";
+import EscojeTuSaborTwoStep from "./pages/EscojeTuSaborTwoStep";
+import EscojeTuEndulsante from "./pages/EscojeTuEndulsante";
 import EscojeTuEndulsanteSemilla from "./pages/EscojeTuEndulsanteSemilla";
+import ConfirmaTuPedido from "./pages/ConfirmaTuPedido";
+import ConfirmaTuPedidoGriego from "./pages/ConfirmaTuPedidoGriego";
 import ConfirmaTuPedidoSemilla from "./pages/ConfirmaTuPedidoSemilla";
+import Formulario from "./pages/Formulario";
+import Thanks from "./pages/Thanks";
+import Pedido from "./pages/Pedido";
+import Register from './pages/Register';
+
+// Rutas protegidas
+import ProtectedRoute from "./components/PrivateRoute";
+import RoleRoute from "./components/RoleRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Dashboard />,
+    element: <Login />,
+  },
+  {
+    path: "/registro",
+    element: <Register />,
+  },
+  {
+    path: "/inicio",
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuProducto",
-    element: <EscojeTuProducto />,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuProducto />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuProductoSemilla",
-    element: <EscojeTuProductoSemilla/>,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuProductoSemilla />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuSaborSemilla",
-    element: <EscojeTuSaborSemilla/>,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuSaborSemilla />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuSaborLeche",
-    element: <EscojeTuSaborLeche />,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuSaborLeche />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuSaborGriego",
-    element:<EscojeTuSaborGriego/>,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuSaborGriego />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTutopping",
-    element:<EscojeTuTopping/>,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuTopping />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuProducto/EscojeTuSabor/EscojeTuSaborTwoStep",
-    element: <EscojeTuSaborTwoStep />,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuSaborTwoStep />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuProducto/EscojeTuSabor/EscojeTuEndulsante",
-    element: <EscojeTuEndulsante />,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuEndulsante />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/EscojeTuEndulsantesemilla",
-    element: <EscojeTuEndulsanteSemilla/>,
+    element: (
+      <ProtectedRoute>
+        <EscojeTuEndulsanteSemilla />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/confirmatuPedido",
-    element: <ConfirmaTuPedido/>,
+    element: (
+      <ProtectedRoute>
+        <ConfirmaTuPedido />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/confirmatuPedidoGriego",
-    element: <ConfirmaTuPedidoGriego/>,
+    element: (
+      <ProtectedRoute>
+        <ConfirmaTuPedidoGriego />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/confirmatuPedidoSemilla",
-    element: <ConfirmaTuPedidoSemilla/>,
+    element: (
+      <ProtectedRoute>
+        <ConfirmaTuPedidoSemilla />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/formulario",
-    element: <Formulario/>,
+    element: (
+      <ProtectedRoute>
+        <Formulario />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/thanks",
-    element:<Thanks/>,
+    element: (
+      <ProtectedRoute>
+        <Thanks />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "toni/pedido",
-    element:<Pedido/>,
-  }
+    element: (
+      <ProtectedRoute>
+        <RoleRoute role="despachador">
+          <Pedido />
+        </RoleRoute>
+      </ProtectedRoute>
+    ),
+  },
 ]);
 
 function App() {
